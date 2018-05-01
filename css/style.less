@@ -16,25 +16,93 @@
 .h3-resp-style{
     text-align: center;
     @media (max-width: (@sm - 1) ){font-size: 1rem;}
-    @media(min-width: @sm ) and (max-width: (@md - 1){font-size: 1.4rem;}
+    @media(min-width: @sm ) and (max-width: (@md - 1)){font-size: 1.4rem;}
     @media (min-width: @md ){font-size: 1.70rem;}
 }
 .round{border-radius: 50%;}
-.cntr{
-    text-align: center;
-    &-md{
-        @media (min-width: @md ){
-            text-align: center;
-            &-none{text-align:inherit;}
+.text{
+    &r{
+        text-align: right;
+        &-none{text-align:inherit;}
+        &-sm{
+            @media (min-width: @sm ){
+                text-align: right;
+                &-none{text-align:inherit;}
+            }
+        }
+        &-md{
+            @media (min-width: @md ){
+                text-align: right;
+                &-none{text-align:inherit;}
+            }
+        }
+        &-lg{
+            @media (min-width: @lg ){
+                text-align: right;
+                &-none{text-align:inherit;}
+            }
+        }
+        &-xl{
+            @media (min-width: @xl ){
+                text-align: right;
+                &-none{text-align:inherit;}
+            }
         }
     }
-}
-.textr{
-    text-align: right;
-    &-md{
-        @media (min-width: @md ){
-            text-align: right;
-            &-none{text-align:inherit;}
+    &c{
+        text-align: center;
+        &-none{text-align:inherit;}
+        &-sm{
+            @media (min-width: @sm ){
+                text-align: center;
+                &-none{text-align:inherit;}
+            }
+        }
+        &-md{
+            @media (min-width: @md ){
+                text-align: center;
+                &-none{text-align:inherit;}
+            }
+        }
+        &-lg{
+            @media (min-width: @lg ){
+                text-align: center;
+                &-none{text-align:inherit;}
+            }
+        }
+        &-xl{
+            @media (min-width: @xl ){
+                text-align: center;
+                &-none{text-align:inherit;}
+            }
+        }
+    }
+    &l{
+        text-align: left;
+        &-none{text-align:inherit;}
+        &-sm{
+            @media (min-width: @sm ){
+                text-align: left;
+                &-none{text-align:inherit;}
+            }
+        }
+        &-md{
+            @media (min-width: @md ){
+                text-align: left;
+                &-none{text-align:inherit;}
+            }
+        }
+        &-lg{
+            @media (min-width: @lg ){
+                text-align: left;
+                &-none{text-align:inherit;}
+            }
+        }
+        &-xl{
+            @media (min-width: @xl ){
+                text-align: left;
+                &-none{text-align:inherit;}
+            }
         }
     }
 }
