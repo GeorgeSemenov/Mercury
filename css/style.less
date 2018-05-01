@@ -1,0 +1,40 @@
+@font-face{
+    font-family:Roboto;
+    src: url(../fonts/RobotoSlab-Regular.ttf);
+}
+@sm: 576px;
+@md: 768px;
+@lg: 992px;
+@xl: 1200px;
+.h1-resp-style{
+    text-align: center;
+    @media (max-width: (@sm - 1) ){font-size: 1rem;}
+    @media (min-width: @sm ) and (max-width: (@md - 1) ){font-size: 1.5rem;}
+    @media (min-width: @md ) and (max-width: (@lg - 1) ){font-size: 2rem;}
+    @media (min-width: @lg ){font-size: 2.3rem;}
+}
+.h3-resp-style{
+    text-align: center;
+    @media (max-width: (@sm - 1) ){font-size: 1rem;}
+    @media(min-width: @sm ) and (max-width: (@md - 1){font-size: 1.4rem;}
+    @media (min-width: @md ){font-size: 1.70rem;}
+}
+.round{border-radius: 50%;}
+.cntr{
+    text-align: center;
+    &-md{
+        @media (min-width: @md ){
+            text-align: center;
+            &-none{text-align:inherit;}
+        }
+    }
+}
+.textr{
+    text-align: right;
+    &-md{
+        @media (min-width: @md ){
+            text-align: right;
+            &-none{text-align:inherit;}
+        }
+    }
+}
