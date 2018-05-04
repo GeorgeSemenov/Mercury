@@ -106,3 +106,26 @@
         }
     }
 }
+nav{
+    top: 54px;
+    &.bg-dark{background-color: transparent !important;}//Переопределил цвет для наваа
+    &.absolutly{
+        position: absolute;
+        //Две последующие строки нужны, чтобы nav растянулся по всей ширине body, ведь с position:absolute, он займёт лишь значение width:auto
+        right: 0;
+        left: 0;
+    }
+    .container{
+        @media (min-width: 1710px ){
+            max-width: 1700px !important;
+            padding: 0px !important;
+        }
+
+    .navbar-brand{padding-left: 10px;}
+    }
+}
+@dark-screen-color: #0e1a35;
+.get-started{
+    height: 100vh;
+    background-color: @dark-screen-color;
+}
