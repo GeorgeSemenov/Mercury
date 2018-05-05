@@ -1,6 +1,6 @@
 @font-face{
     font-family:Roboto;
-    src: url(../fonts/RobotoSlab-Regular.ttf);
+    src: url(../fonts/Roboto-Regular.ttf);
 }
 @sm: 576px;
 @md: 768px;
@@ -107,6 +107,8 @@
     }
 }
 nav{
+    font-size: 18.5px;
+    font-family:Roboto;
     top: 54px;
     &.bg-dark{background-color: transparent !important;}//Переопределил цвет для наваа
     &.absolutly{
@@ -121,7 +123,23 @@ nav{
             padding: 0px !important;
         }
 
-    .navbar-brand{padding-left: 10px;}
+        .navbar-brand{padding-left: 10px;}
+
+        .navbar-nav{
+            .nav-item{
+                .nav-link{
+                    padding-top: 12px;
+                    padding-right: 43.8px;
+                }
+                .login-btn{
+                    @border-color: #233a72;
+                    padding: 11px 43px;
+                    padding-top: 9px;
+                    border: 1px solid @border-color;
+                    border-radius: 27px;
+                }
+            }
+        }
     }
 }
 @dark-screen-color: #0e1a35;
