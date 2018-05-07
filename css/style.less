@@ -1,110 +1,7 @@
+@import "default.less";
 @font-face{
     font-family:Roboto;
-    src: url(../fonts/Roboto-Regular.ttf);
-}
-@sm: 576px;
-@md: 768px;
-@lg: 992px;
-@xl: 1200px;
-.h1-resp-style{
-    text-align: center;
-    @media (max-width: (@sm - 1) ){font-size: 1rem;}
-    @media (min-width: @sm ) and (max-width: (@md - 1) ){font-size: 1.5rem;}
-    @media (min-width: @md ) and (max-width: (@lg - 1) ){font-size: 2rem;}
-    @media (min-width: @lg ){font-size: 2.3rem;}
-}
-.h3-resp-style{
-    text-align: center;
-    @media (max-width: (@sm - 1) ){font-size: 1rem;}
-    @media(min-width: @sm ) and (max-width: (@md - 1)){font-size: 1.4rem;}
-    @media (min-width: @md ){font-size: 1.70rem;}
-}
-.round{border-radius: 50%;}
-.text{
-    &r{
-        text-align: right;
-        &-none{text-align:inherit;}
-        &-sm{
-            @media (min-width: @sm ){
-                text-align: right;
-                &-none{text-align:inherit;}
-            }
-        }
-        &-md{
-            @media (min-width: @md ){
-                text-align: right;
-                &-none{text-align:inherit;}
-            }
-        }
-        &-lg{
-            @media (min-width: @lg ){
-                text-align: right;
-                &-none{text-align:inherit;}
-            }
-        }
-        &-xl{
-            @media (min-width: @xl ){
-                text-align: right;
-                &-none{text-align:inherit;}
-            }
-        }
-    }
-    &c{
-        text-align: center;
-        &-none{text-align:inherit;}
-        &-sm{
-            @media (min-width: @sm ){
-                text-align: center;
-                &-none{text-align:inherit;}
-            }
-        }
-        &-md{
-            @media (min-width: @md ){
-                text-align: center;
-                &-none{text-align:inherit;}
-            }
-        }
-        &-lg{
-            @media (min-width: @lg ){
-                text-align: center;
-                &-none{text-align:inherit;}
-            }
-        }
-        &-xl{
-            @media (min-width: @xl ){
-                text-align: center;
-                &-none{text-align:inherit;}
-            }
-        }
-    }
-    &l{
-        text-align: left;
-        &-none{text-align:inherit;}
-        &-sm{
-            @media (min-width: @sm ){
-                text-align: left;
-                &-none{text-align:inherit;}
-            }
-        }
-        &-md{
-            @media (min-width: @md ){
-                text-align: left;
-                &-none{text-align:inherit;}
-            }
-        }
-        &-lg{
-            @media (min-width: @lg ){
-                text-align: left;
-                &-none{text-align:inherit;}
-            }
-        }
-        &-xl{
-            @media (min-width: @xl ){
-                text-align: left;
-                &-none{text-align:inherit;}
-            }
-        }
-    }
+    src: url(../fonts/roboto-regular.ttf);
 }
 nav{
     font-size: 18.5px;
@@ -130,6 +27,7 @@ nav{
                 .nav-link{
                     padding-top: 12px;
                     padding-right: 43.8px;
+                    color: #fff;
                 }
                 .login-btn{
                     @border-color: #233a72;
@@ -137,6 +35,19 @@ nav{
                     padding-top: 9px;
                     border: 1px solid @border-color;
                     border-radius: 27px;
+                    color: #5584ff;
+                    .transition();
+                    outline:none;//Убираем обводку при нажатии или выеделении кнопки.
+                    &:hover{
+//                        .transition();
+                        background-color: @border-color;
+                        color: #fff;
+                    }
+                    &:active{
+                        background-color: white;
+                        color: #5584ff;
+                        .transition(0;0);//Надо убрать транзишон, а то срабатывает  где не надо.
+                    }
                 }
             }
         }
