@@ -20,21 +20,26 @@ nav{
             padding: 0px !important;
         }
 
-        .navbar-brand{padding-left: 10px;}
+        .navbar-brand{
+            padding-left: 10px;
+            @media (max-width: @md - 1){width: 180px;}
+            img{width: 100%;}
+        }
 
         .navbar-nav{
             .nav-item{
                 .nav-link{
                     padding-top: 12px;
                     padding-right: 43.8px;
+                    @media (max-width: @lg - 1){padding-right: 0px;}
                     color: #fff;
                 }
                 .login-btn{
-                    @border-color: #233a72;
+                @border-color: #233a72;
                     padding: 11px 43px;
                     padding-top: 9px;
                     border: 1px solid @border-color;
-                    border-radius: 27px;
+                    .rounded(27px);
                     color: #5584ff;
                     .transition();
                     outline:none;//Убираем обводку при нажатии или выеделении кнопки.
