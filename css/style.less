@@ -3,18 +3,31 @@
     font-family:Roboto;
     src: url(../fonts/roboto-regular.ttf);
 }
+@font-face{
+    font-family:Roboto-thin;
+    src: url(../fonts/robot-thin.ttf);
+}
+@font-face{
+    font-family:roboto-bold;
+    src: url(../fonts/roboto-bold.ttf);
+}
+.container h1{
+    font-family:Roboto-thin;
+    .h1-resp-style(@x-width:1700px; @x-size:60px);
+}
+.container h3{
+    font-family:Roboto;
+    .h3-resp-style(@x-width:1700px; @x-size:36px);
+}
+@dark-screen-color: #0e1a35;
 nav{
     font-size: 18.5px;
     font-family:Roboto;
-    top: 54px;
-    &.bg-dark{background-color: transparent !important;}//Переопределил цвет для наваа
+    &.bg-dark{background-color: @dark-screen-color !important;}//Переопределил цвет для наваа
     &.absolutly{
-        position: absolute;
-        //Две последующие строки нужны, чтобы nav растянулся по всей ширине body, ведь с position:absolute, он займёт лишь значение width:auto
-        right: 0;
-        left: 0;
     }
     .container{
+        margin-top: 54px;
         @media (min-width: 1710px ){
             max-width: 1700px !important;
             padding: 0px !important;
@@ -35,7 +48,7 @@ nav{
                     color: #fff;
                 }
                 .login-btn{
-                @border-color: #233a72;
+                    @border-color: #233a72;
                     padding: 11px 43px;
                     padding-top: 9px;
                     border: 1px solid @border-color;
@@ -58,8 +71,30 @@ nav{
         }
     }
 }
-@dark-screen-color: #0e1a35;
 .get-started{
     height: 100vh;
     background-color: @dark-screen-color;
+    .container{
+        height: 100%;
+        @media (min-width: (@lg)){padding-top: 121px;}
+        @media (max-width: (@lg - 1)){padding-top: 50px}
+
+        h1{color: #fff;}
+        h3{
+            color: #8492af;
+            font-family: Roboto;
+        }
+        .start-btn{
+            .rounded(27px);
+            background-color: #5584ff;
+            text-decoration: none;
+            color: #fff;
+            font-family: roboto-bold;
+            position: relative;
+            top: 84px;
+            padding: 12px 55px;
+            padding-bottom: 13px;
+            font-size: 19px;
+        }
+    }
 }

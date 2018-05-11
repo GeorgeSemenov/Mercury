@@ -2,19 +2,22 @@
 @md: 768px;
 @lg: 992px;
 @xl: 1200px;
-.h1-resp-style (@xs-size:1rem; @sm-size:1.5rem; @md-size:2rem; @lg-size: 2.3rem){
+.h1-resp-style (@xs-size:1rem; @sm-size:1.5rem; @md-size:2rem; @lg-size: 2.3rem;@x-width :@xl; @x-size: @lg-size){
     text-align: center;
     @media (max-width: (@sm - 1) ){font-size: @xs-size;}
     @media (min-width: @sm ) and (max-width: (@md - 1) ){font-size: @sm-size;}
     @media (min-width: @md ) and (max-width: (@lg - 1) ){font-size: @md-size;}
-    @media (min-width: @lg ){font-size: @lg-size;}
+    @media (min-width: @lg )and (max-width: (@x-width - 1) ){font-size: @lg-size;}
+    @media (min-width: @x-width ){font-size: @x-size;}
 }
-//Чтобы исменить не все а несколько аргументов - достаточно написать .h1-resp-style(@md-size:3rem; @sm-size: 1rem);
-.h3-resp-style (@xs-size:1rem; @sm-size:1.4rem; @md-size:1.70rem){
+//Чтобы изменить не все а несколько аргументов - достаточно написать .h1-resp-style(@x-width:1700px; @x-size: 5rem);
+.h3-resp-style (@xs-size:1rem; @sm-size:1.4rem; @md-size:1.70rem; @lg-size:1.70rem; @x-width: @xl; @x-size:1.70rem){
     text-align: center;
     @media (max-width: (@sm - 1) ){font-size: @xs-size;}
     @media(min-width: @sm ) and (max-width: (@md - 1)){font-size: @sm-size;}
-    @media (min-width: @md ){font-size: @md-size;}
+    @media (min-width: @md ) and (max-width: (@lg - 1)){font-size: @md-size;}
+    @media (min-width: @lg ) and (max-width: (@x-width - 1)){font-size: @lg-size;}
+    @media (min-width: @x-width ) {font-size: @x-size;}
 }
 .rounded(@r: 50%){
     border-radius: @r;
