@@ -4,15 +4,15 @@
     src: url(../fonts/roboto-regular.ttf);
 }
 @font-face{
-    font-family:Roboto-thin;
-    src: url(../fonts/robot-thin.ttf);
+    font-family:roboto-thin;
+    src: url(../fonts/roboto-thin.ttf);
 }
 @font-face{
     font-family:roboto-bold;
     src: url(../fonts/roboto-bold.ttf);
 }
 .container h1{
-    font-family:Roboto-thin;
+    font-family:roboto-thin;
     .h1-resp-style(@x-width:1700px; @x-size:60px);
 }
 .container h3{
@@ -79,22 +79,41 @@ nav{
         @media (min-width: (@lg)){padding-top: 121px;}
         @media (max-width: (@lg - 1)){padding-top: 50px}
 
-        h1{color: #fff;}
+        h1{
+            color: #fff;
+            font-family: roboto-thin;
+        }
         h3{
             color: #8492af;
             font-family: Roboto;
         }
-        .start-btn{
-            .rounded(27px);
-            background-color: #5584ff;
-            text-decoration: none;
-            color: #fff;
-            font-family: roboto-bold;
-            position: relative;
-            top: 84px;
-            padding: 12px 55px;
-            padding-bottom: 13px;
-            font-size: 19px;
+        h3 + div{
+            margin-top: 82px;
+            .start-btn{
+                .rounded(27px);
+                @start-btn-color: #5584ff;
+                background-color: @start-btn-color;
+                text-decoration: none;
+                color: #fff;
+                font-family: roboto-bold;
+                font-size: 19px;
+                @side-button:52px;
+                padding-left: @side-button;
+                padding-right: @side-button;
+                padding-top: 2px;
+
+                &:hover{background-color: darken(@start-btn-color, 15%);}
+                &:active{background-color: darken(@start-btn-color, 30%);}
+
+                &>div{//это искуственно посаженный блок, чтобы задать высоту кнопке.
+                    display: inline-block;
+                    height: 46px;
+                    vertical-align: middle;//Если не понимаешь зачем тут это свойство, то читай в css>проблемы со свойствами>vertical-align
+                }
+            }
+        }
+        .image-container{
+            margin-top: 8%;
         }
     }
 }
