@@ -146,61 +146,57 @@ nav{
     .container{
         margin-top: 6.7%;
         @media (min-width: 1710px ){
-            max-width: 1370px !important;
+            max-width: 1342px !important;
             padding: 0px !important;
         }
         .row{
-            img{
-                width: 80px;
+            div.column-lg{
+                @media (min-width: (@lg)){
+                    max-width: 370px;
+                    padding: 0;
+                }
 
-                @media (min-width: (@lg)){margin-right: 39px;}
+            }
+            div.image-container{
+                height: 39%;
+                margin-bottom: 4.5px;
+                img{width: 80px;}
             }
             h4{
-                margin-top: 13%;
+                padding-right: 2px;
                 font-family: roboto-bold;
                 font-size: 1.55rem;
-                @media (min-width: (@lg)){padding-right: 41px;}
             }
             p{
                 margin-top: 17px;
                 color: #8492af;
                 font-size: 19px;
                 line-height: 29.5px;
-                @media (min-width: (@lg)){padding-right: 40px;}
             }
             .see-more-button{
                 .this-project-button(@border-color:#dadee7; @button-height:47px;);
                 color: #0e1a35;
-                margin-top: 33px;
+                margin-top: 34px;
                 padding: 0 85px;
                 padding-top: 1px;
                 font-family: roboto-bold;
                 font-size: 19px;
-                margin-right: 38px;
+            }
+            &>:nth-child(1){
+                position: relative;
+                left: 15px;
             }
             &>:nth-child(2){
-                img{
-                    margin-right: 0px;
+                div.image-container img{
                     width: 92px;
-                    margin-top: -6px;
+                    position: relative;
+                    bottom: 6px;
                 }
-                h4{
-                    padding-right: 1px;
-                    margin-top: 51px;
-                }
-                p{padding: 0 20px;}
-                .see-more-button{margin-right: 0;}
             }
             &>:nth-child(3){
-                img{margin: -3px -68px 0px 0px;}
-                h4{
-                    padding: 0;
-                    @media (min-width: (@xl)){
-                        margin-left: 110px;
-                        padding-left: 66px;
-                        margin-right: -69px;
-                    }
-
+                div.image-container img{
+                    position: relative;
+                    bottom: 3px;
                 }
             }
         }
