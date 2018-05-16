@@ -20,6 +20,19 @@
     .h3-resp-style(@x-width:1700px; @x-size:36px);
 }
 @dark-screen-color: #0e1a35;
+.this-project-button(@r:27px; @button-height: 30px; @border-width:1px; @border-color:black){
+    .button(@r:27px; @button-height);
+    .transition();
+    border: @border-width solid transparent;
+    &:hover{
+        .transition();
+        border: @border-width solid @border-color;
+    }
+    &:active{
+        background-color: @border-color;
+        .transition(0;0);//Надо убрать транзишон, а то срабатывает  где не надо.
+    }
+}
 nav{
     font-size: 18.5px;
     font-family:Roboto;
@@ -49,21 +62,20 @@ nav{
                 }
                 .login-btn{
                     @border-color: #233a72;
+                    @border-width: 1px;
                     padding: 11px 43px;
                     padding-top: 9px;
-                    border: 1px solid @border-color;
                     .rounded(27px);
                     color: #5584ff;
-                    .transition();
                     outline:none;//Убираем обводку при нажатии или выеделении кнопки.
+                    .transition();
+                    border: @border-width solid transparent;
                     &:hover{
-//                        .transition();
-                        background-color: @border-color;
-                        color: #fff;
+                        .transition();
+                        border: @border-width solid @border-color;
                     }
                     &:active{
-                        background-color: white;
-                        color: #5584ff;
+                        background-color: @border-color;
                         .transition(0;0);//Надо убрать транзишон, а то срабатывает  где не надо.
                     }
                 }
@@ -71,11 +83,23 @@ nav{
         }
     }
 }
-.get-started{
+.header-background{
     height: 100vh;
     background-color: @dark-screen-color;
+    position: absolute;
+    width: 100vw;
+    z-index: 0;
+    background-image: url(../imgs/firstScreen/Graph.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 13%;
+}
+.get-started{
+    position: relative; // это нужно чтобы z-index сработал см проблемы с css свойствами почему z-index не срабатывает.
+    z-index: 0;
     .container{
         height: 100%;
+        z-index: 10;
         @media (min-width: (@lg)){padding-top: 121px;}
         @media (max-width: (@lg - 1)){padding-top: 50px}
 
@@ -114,6 +138,71 @@ nav{
         }
         .image-container{
             margin-top: 8%;
+        }
+    }
+}
+
+.icon-features{
+    .container{
+        margin-top: 6.7%;
+        @media (min-width: 1710px ){
+            max-width: 1370px !important;
+            padding: 0px !important;
+        }
+        .row{
+            img{
+                width: 80px;
+
+                @media (min-width: (@lg)){margin-right: 39px;}
+            }
+            h4{
+                margin-top: 13%;
+                font-family: roboto-bold;
+                font-size: 1.55rem;
+                @media (min-width: (@lg)){padding-right: 41px;}
+            }
+            p{
+                margin-top: 17px;
+                color: #8492af;
+                font-size: 19px;
+                line-height: 29.5px;
+                @media (min-width: (@lg)){padding-right: 40px;}
+            }
+            .see-more-button{
+                .this-project-button(@border-color:#dadee7; @button-height:47px;);
+                color: #0e1a35;
+                margin-top: 33px;
+                padding: 0 85px;
+                padding-top: 1px;
+                font-family: roboto-bold;
+                font-size: 19px;
+                margin-right: 38px;
+            }
+            &>:nth-child(2){
+                img{
+                    margin-right: 0px;
+                    width: 92px;
+                    margin-top: -6px;
+                }
+                h4{
+                    padding-right: 1px;
+                    margin-top: 51px;
+                }
+                p{padding: 0 20px;}
+                .see-more-button{margin-right: 0;}
+            }
+            &>:nth-child(3){
+                img{margin: -3px -68px 0px 0px;}
+                h4{
+                    padding: 0;
+                    @media (min-width: (@xl)){
+                        margin-left: 110px;
+                        padding-left: 66px;
+                        margin-right: -69px;
+                    }
+
+                }
+            }
         }
     }
 }

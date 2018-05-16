@@ -124,4 +124,17 @@
   -webkit-user-select: none;
   user-select: none;
 }
-.outlineless{oubline:none;}//Убираем обводку при нажатии или выделении элемента
+.outlineless{outline:none;}//Убираем обводку при нажатии или выделении элемента
+
+//Стоит отметить, чтобы задавать высоту этой кнопки нужно создать внутри неё фиктивный, ничем незаполненный div
+.button (@r:27px; @button-height;){
+    .rounded(@r);
+    text-decoration: none;
+    display: inline-block;
+
+    &>div{//это искуственно посаженный блок, чтобы задать высоту кнопке.
+        display: inline-block;
+        height: @button-height;
+        vertical-align: middle;//Если не понимаешь зачем тут это свойство, то читай в css>проблемы со свойствами>vertical-align
+    }
+}
