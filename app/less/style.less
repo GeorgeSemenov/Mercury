@@ -11,11 +11,11 @@
     font-family:roboto-bold;
     src: url(../fonts/roboto-bold.ttf);
 }
-.container h1{
+.container-fluid h1, .container h1{
     font-family:roboto-thin;
     .h1-resp-style(@x-width:1700px; @x-size:60px);
 }
-.container h3{
+.container-fluid h3, .container h3{
     font-family:Roboto;
     .h3-resp-style(@x-width:1700px; @x-size:36px);
 }
@@ -86,8 +86,9 @@ nav{
 .header-background{
     height: 100vh;
     background-color: @dark-screen-color;
+    margin-top: -1px;//это нужно для гуголь хрома, чтобы не появлялась линия между nav и header-background
     position: absolute;
-    width: 100vw;
+    width: 100%;
     z-index: 0;
     background-image: url(../imgs/firstScreen/Graph.png);
     background-repeat: no-repeat;
@@ -97,6 +98,7 @@ nav{
 .get-started{
     position: relative; // это нужно чтобы z-index сработал см проблемы с css свойствами почему z-index не срабатывает.
     z-index: 0;
+    @media (min-height: (1050px)){height: 100vh;}//Это необходимо для того, чтобы при больших высотах нижний скрин (icons-featres) налезает наверх, поэтому высота должна быть 100vh чтобы вытолкнуть этот скрин ниже. Но при маленьких высотах картинка с Hello John! лезет на нижний экран и налезает на второй скрин, т.к. первый официально закончился , ведь высота у него 100vh поэтому на малых высотах высота должна быть auto, чтобы отталкивать второй скрин вниз.
     .container{
         height: 100%;
         z-index: 10;
@@ -140,26 +142,49 @@ nav{
             margin-top: 8%;
         }
     }
+    @media (max-width: (@lg - 1)){
+        height: 100vh
+    }
+
 }
 
 .icon-features{
+    @icon-features-width-container-max: 1710px;
+    margin-bottom: 15vh;
     .container{
         margin-top: 6.7%;
-        @media (min-width: 1710px ){
+        @media (min-width: @icon-features-width-container-max ){
             max-width: 1342px !important;
             padding: 0px !important;
         }
-        .row{
+        .row-of-lines{
+            margin-bottom: -3px;
+            max-width: 74%;
+            margin-left: 13%;
+            position: relative;
+            top: 35px;
+            div.line{
+                width: 22%;
+                border-bottom: solid 1px #dadee7;
+            }
+            }
+        .row:not(.row-of-lines){
             div.column-lg{
+                padding: 0 !important;
+                @media (max-width: (@lg - 1)){
+                    margin-bottom: 20px;
+                }
+
                 @media (min-width: (@lg)){
-                    max-width: 370px;
+                    max-width: 30%x;
                     padding: 0;
                 }
 
+                @media (min-width: (@xl)){max-width: 370px;}
+
             }
             div.image-container{
-                height: 39%;
-                margin-bottom: 4.5px;
+                height: 135px;
                 img{width: 80px;}
             }
             h4{
@@ -183,22 +208,96 @@ nav{
                 font-size: 19px;
             }
             &>:nth-child(1){
-                position: relative;
-                left: 15px;
+                @media (min-width: (@icon-features-width-container-max)){
+                    position: relative;
+                    left: 15px;
+                }
             }
             &>:nth-child(2){
                 div.image-container img{
                     width: 92px;
-                    position: relative;
-                    bottom: 6px;
+                    @media (min-width: (@lg)){
+                        position: relative;
+                        bottom: 6px;
+                    }
                 }
             }
             &>:nth-child(3){
                 div.image-container img{
-                    position: relative;
-                    bottom: 3px;
+                    @media (min-width: (@lg)){
+                        position: relative;
+                        bottom: 3px;
+                    }
                 }
             }
         }
     }
+}
+.all-your-need-is-a-love{
+    font-family: Roboto;
+    .container-fluid{
+        padding-right: 0px;
+        .row{
+            @media (min-width: (@lg)){ height: 710px; }
+
+            div.col-12{
+                @media (min-width: (@lg)){ max-width: 49%; }
+
+                div.ml-auto{
+                    @media (min-width: (@xl)){margin-top: 143px}
+                    position: relative;
+                    left: -8px;
+
+                    h1{margin-bottom: 38px;}
+                    div{
+                        @media (min-width: (@lg)){width: 590px;}
+                        p{
+                            font-size: 18px;
+                            line-height: 30px;
+
+                            & + p{
+                                margin-top: 30px;
+                            }
+                        }
+                        ul{
+                            margin-top: 57px;
+                            position: relative;
+                            right: 38px;
+                            li{
+                                list-style: none;
+                                font-size: 22px;
+                                margin-bottom: 24px;
+
+                                &:before{
+                                    @marker-size: 28px;
+                                    content: '';
+                                    display: inline-block;
+                                    background-image: url(../imgs/screenAllYourNeedIsABrowser/marker.png);
+                                    background-size: cover;
+                                    width: @marker-size;
+                                    height: @marker-size;
+                                    margin-right: 17px;
+                                }
+
+                                span{
+                                    position: relative;
+                                    bottom: 7px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            div.d-none{
+                background-image: url(../imgs/screenAllYourNeedIsABrowser/Grupa%202.png);
+                background-size: 105%;
+                padding: 0;
+                right: -5px;
+                background-position-x: -40px;
+                background-position-y: 70px;
+                background-repeat: no-repeat;
+            }
+        }
+
+        }
 }
