@@ -8,8 +8,6 @@
     %link(href="css/style.css" rel="stylesheet")/
     %link(href="css/libs.min.css" rel="stylesheet prefetch")/
   %body
-    /Declare Variables
-    - xs = '1200px'
     %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.absolutly
       .container
         %a.navbar-brand(href="#")
@@ -39,7 +37,13 @@
               / этот блок нужен, чтобы задать высоту ссылочной кнопке использую height и vertical align
             Get started
         .image-container
-          %img.d-none.d-lg-inline(alt="dashboard" src="img/firstScreen/dashboard.png")/
+          %picture
+            %source(media="(min-width: 1200px)" srcset="img/firstScreen/dashboard-1400.png")
+            %source(media="(min-width: 992px)" srcset="img/firstScreen/dashboard-1096.png")
+            %source(media="(min-width: 768px)" srcset="img/firstScreen/dashboard-880.png")
+            %source(media="(min-width: 576px)" srcset="img/firstScreen/dashboard-672.png")
+            %source(sizes="100vw" srcset="img/firstScreen/dashboard-448.png")
+            %img.col-12.pr-0(alt="dashboard" src="img/firstScreen/dashboard.png")
     .icon-features
       .container
         .row.row-of-lines.d-none.d-lg-flex
@@ -81,15 +85,15 @@
                 %p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                 %ul
                   %li
-                    %span Lorem ipsum dolor sit amet consectetur
+                    %span.mx-auto.mx-lg-0 Lorem ipsum dolor sit amet consectetur
                   %li
                     %span Ut enim ad minim veniam quis nostrud
-          .d-none.d-lg-block.col-lg-6.px-0
+          .d-none.d-lg-block.col-lg-6.px-0.my-auto
             %picture.px-0.col-12
-              %source(media="(min-width: 1200px)" srcset="img/screenAllYourNeedIsABrowser/Grupa2-1600.png")
-              %source(media="(min-width: 992px)" srcset="img/screenAllYourNeedIsABrowser/Grupa2-1280.png")
-              %source(media="(min-width: 768px)" srcset="img/screenAllYourNeedIsABrowser/Grupa2-960.png")
-              %source(media="(min-width: 576px)" srcset="img/screenAllYourNeedIsABrowser/Grupa2-640.png")
+              %source(media="(min-width: 1200px)" srcset="img/screenAllYourNeedIsABrowser/Grupa2-1200.png")
+              %source(media="(min-width: 992px)" srcset="img/screenAllYourNeedIsABrowser/Grupa2-992.png")
+              %source(media="(min-width: 768px)" srcset="img/screenAllYourNeedIsABrowser/Grupa2-768.png")
+              %source(media="(min-width: 576px)" srcset="img/screenAllYourNeedIsABrowser/Grupa2-576.png")
               %source(sizes="100vw" srcset="img/screenAllYourNeedIsABrowser/Grupa2-320.png")
-              %img.col-12.pr-0(alt="Lotus" src="img/screenAllYourNeedIsABrowser/Grupa2.png")
+              %img.col-12.p-0(alt="Lotus" src="img/screenAllYourNeedIsABrowser/Grupa2.png")
     %script(src="js/libs.min.js")

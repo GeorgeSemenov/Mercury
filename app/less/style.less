@@ -1,4 +1,4 @@
-@import "default.less";
+@import "_default.less";
 @font-face{
     font-family:Roboto;
     src: url(../fonts/roboto-regular.ttf);
@@ -13,11 +13,14 @@
 }
 .container-fluid h1, .container h1{
     font-family:roboto-thin;
-    .h1-resp-style(@x-width:1700px; @x-size:60px);
+    .h1-resp-style(@x-size:60px);
 }
 .container-fluid h3, .container h3{
     font-family:Roboto;
-    .h3-resp-style(@x-width:1700px; @x-size:36px);
+    .h3-resp-style(@xl-size:36px);
+}
+p{
+    .font-resp-style(@xs-sz: 11px; @md-sz: 15px; @lg-sz: 18px);
 }
 @dark-screen-color: #0e1a35;
 .this-project-button(@r:27px; @button-height: 30px; @border-width:1px; @border-color:black){
@@ -33,6 +36,8 @@
         .transition(0;0);//Надо убрать транзишон, а то срабатывает  где не надо.
     }
 }
+html{height: 100%;}
+body{height: 100%;}
 nav{
     font-size: 18.5px;
     font-family:Roboto;
@@ -90,11 +95,12 @@ nav{
     position: absolute;
     width: 100%;
     z-index: 0;
-    background-image: url(../imgs/firstScreen/Graph.png);
+    background-image: url(../img/firstScreen/Graph.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position-y: 13%;
 }
+
 .get-started{
     position: relative; // это нужно чтобы z-index сработал см проблемы с css свойствами почему z-index не срабатывает.
     z-index: 0;
@@ -150,9 +156,10 @@ nav{
 
 .icon-features{
     @icon-features-width-container-max: 1710px;
-    margin-bottom: 15vh;
+    @media (min-width: (@lg)){ height: 700px; }
     .container{
-        margin-top: 6.7%;
+        position: relative;
+        top: 17%;
         @media (min-width: @icon-features-width-container-max ){
             max-width: 1342px !important;
             padding: 0px !important;
@@ -236,23 +243,18 @@ nav{
 .all-your-need-is-a-love{
     font-family: Roboto;
     .container-fluid{
-        padding-right: 0px;
         .row{
-            @media (min-width: (@lg)){ height: 710px; }
-
             div.col-12{
-                @media (min-width: (@lg)){ max-width: 49%; }
-
                 div.ml-auto{
-                    @media (min-width: (@xl)){margin-top: 143px}
+                    @media (min-width: (@lg)){top: 12%}
                     position: relative;
+                    
                     left: -8px;
 
                     h1{margin-bottom: 38px;}
                     div{
-                        @media (min-width: (@lg)){width: 590px;}
+                        @media(min-width: @lg) { max-width:84%; }
                         p{
-                            font-size: 18px;
                             line-height: 30px;
 
                             & + p{
@@ -265,14 +267,14 @@ nav{
                             right: 38px;
                             li{
                                 list-style: none;
-                                font-size: 22px;
+                                .font-resp-style(@xs-sz: 15px; @md-sz: 19px; @lg-sz: 22px);
                                 margin-bottom: 24px;
 
                                 &:before{
                                     @marker-size: 28px;
                                     content: '';
                                     display: inline-block;
-                                    background-image: url(../imgs/screenAllYourNeedIsABrowser/marker.png);
+                                    background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
                                     background-size: cover;
                                     width: @marker-size;
                                     height: @marker-size;
@@ -289,15 +291,17 @@ nav{
                 }
             }
             div.d-none{
-                background-image: url(../imgs/screenAllYourNeedIsABrowser/Grupa%202.png);
                 background-size: 105%;
-                padding: 0;
-                right: -5px;
                 background-position-x: -40px;
                 background-position-y: 70px;
                 background-repeat: no-repeat;
+
+                picture{
+                    position: relative;
+                    top: 1%;
+                }
             }
         }
 
-        }
+    }
 }
