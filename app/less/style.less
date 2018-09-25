@@ -94,11 +94,12 @@ nav{
     margin-top: -1px;//это нужно для гуголь хрома, чтобы не появлялась линия между nav и header-background
     position: absolute;
     width: 100%;
-    z-index: 0;
+    z-index: -1;
+    top: 0;
     background-image: url(../img/firstScreen/Graph.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position-y: 13%;
+    background-position-y: 10%;
 }
 
 .get-started{
@@ -146,6 +147,7 @@ nav{
         }
         .image-container{
             margin-top: 8%;
+            img{@media(max-width: @lg) { width: 100%; }}
         }
     }
     @media (max-width: (@lg - 1)){

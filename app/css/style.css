@@ -322,12 +322,13 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   margin-top: -1px;
   position: absolute;
   width: 100%;
-  z-index: 0;
+  z-index: -1;
+  top: 0;
   background-image: url(../img/firstScreen/Graph.png);
   background-repeat: no-repeat;
   -webkit-background-size: contain;
           background-size: contain;
-  background-position-y: 13%;
+  background-position-y: 10%;
 }
 .get-started {
   position: relative;
@@ -389,6 +390,11 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 .get-started .container .image-container {
   margin-top: 8%;
+}
+@media (max-width: 992px) {
+  .get-started .container .image-container img {
+    width: 100%;
+  }
 }
 @media (max-width: 991px) {
   .get-started {
