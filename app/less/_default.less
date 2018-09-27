@@ -1,14 +1,25 @@
+/*
+Краткое описание описанных тут классов.
+.font-resp-style( ..{breakpoint}-sz.. ) - адаптивные шрифты для всех широт экрана
+    Производные : .h1-resp-style , .h3-resp-style;
+.rounded(@r) - округляет углы - радиус в процентах желательно.
+.transition(duration_animation; time_before_animation; animate_function);
+.text{aligment(r,c,l)}-{breakpoint} - выравнивает по нужному краю текст  и для определённых широт экрана.
+.unselectable() - делает элемент неспособным к выделеню текста внутри.
+.outlineless() - Убираем обводку при нажатии или выделении элемента
+.button (@r:27px; @button-height;)- минимальный шаблон для кнопки.
+*/
 @sm: 576px;
 @md: 768px;
 @lg: 992px;
 @xl: 1200px;
 @x: 1700px;
-.h1-resp-style (@xs-size:1rem; @sm-size:1.5rem; @md-size:2rem; @lg-size: 2.3rem; @xl-size: @lg-size; @x-size: @xl-size){
+.h1-resp-style (@xs-size:1.5rem; @sm-size:1.7rem; @md-size:2rem; @lg-size: 2.3rem; @xl-size: @lg-size; @x-size: @xl-size){
     text-align: center;
     .font-resp-style(@xs-sz: @xs-size; @md-sz: @md-size; @lg-sz: @lg-size; @xl-sz: @xl-size; @x-sz: @x-size);
 }
 //Чтобы изменить не все а несколько аргументов - достаточно написать .h1-resp-style(@x-width:1700px; @x-size: 5rem);
-.h3-resp-style (@xs-size:1rem; @sm-size:1.4rem; @md-size:1.70rem; @lg-size:1.70rem; @xl-size:1.70rem){
+.h3-resp-style (@xs-size:1.3rem; @sm-size:1.5rem; @md-size:1.70rem; @lg-size:1.70rem; @xl-size:1.70rem){
     text-align: center;
     .font-resp-style(@xs-sz: @xs-size; @md-sz: @md-size; @lg-sz: @lg-size; @xl-sz: @xl-size);
 }

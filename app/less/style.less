@@ -13,23 +13,23 @@
 }
 .container-fluid h1, .container h1{
     font-family:roboto-thin;
-    .h1-resp-style(@x-size:60px);
+    .h1-resp-style(@xs-size:1.6rem;@x-size:60px);
 }
 .container-fluid h3, .container h3{
     font-family:Roboto;
     .h3-resp-style(@xl-size:36px);
 }
 p{
-    .font-resp-style(@xs-sz: 11px; @md-sz: 15px; @lg-sz: 18px);
+    .font-resp-style(@xs-sz: 14px; @md-sz: 16px; @lg-sz: 18px);
 }
+a{.outlineless();}
 @dark-screen-color: #0e1a35;
 .this-project-button(@r:27px; @button-height: 30px; @border-width:1px; @border-color:black){
     .button(@r:27px; @button-height);
     .transition();
-    border: @border-width solid transparent;
+    border: @border-width solid @border-color;
     &:hover{
         .transition();
-        border: @border-width solid @border-color;
     }
     &:active{
         background-color: @border-color;
@@ -41,7 +41,7 @@ body{height: 100%;}
 nav{
     font-size: 18.5px;
     font-family:Roboto;
-    &.bg-dark{background-color: @dark-screen-color !important;}//Переопределил цвет для наваа
+    &.bg-dark{background-color: transparent !important;}//Переопределил цвет для наваа
     &.absolutly{
     }
     .container{
@@ -59,16 +59,36 @@ nav{
 
         .navbar-nav{
             .nav-item{
+                position: relative;
+                //Позиционируем элементы в меню, т.к. между ними растояние разно, то пришло
+                @media(min-width: @lg) { 
+                    &:nth-child(1){right: 50px;}
+                    &:nth-child(2){right: 41px;}
+                    &:nth-child(3){right: 34px;}
+                    &:nth-child(4){right: 23px;}
+                }
+
+                @border-color:  #233a72;
+                @button-height: 11px;
                 .nav-link{
-                    padding-top: 12px;
-                    padding-right: 43.8px;
-                    @media (max-width: @lg - 1){padding-right: 0px;}
+                    padding: @button-height 20px;
+                    @padSide: 20px;
                     color: #fff;
+                    .button(@r:27px; 50px);
+                    .transition();
+                    border: 1px solid transparent;
+                    &:hover{
+                        .transition( );
+                        border-color: @border-color;
+                    }
+                    &:active{
+                        background-color: @border-color;
+                        .transition(0;0);
+                    }
                 }
                 .login-btn{
-                    @border-color: #233a72;
                     @border-width: 1px;
-                    padding: 11px 43px;
+                    padding: @button-height 43px;
                     padding-top: 9px;
                     .rounded(27px);
                     color: #5584ff;
@@ -77,7 +97,7 @@ nav{
                     border: @border-width solid transparent;
                     &:hover{
                         .transition();
-                        border: @border-width solid @border-color;
+                        border-color: @border-color;
                     }
                     &:active{
                         background-color: @border-color;
@@ -99,7 +119,7 @@ nav{
     background-image: url(../img/firstScreen/Graph.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position-y: 10%;
+    background-position-y: 35%;
 }
 
 .get-started{
@@ -208,7 +228,14 @@ nav{
                 line-height: 29.5px;
             }
             .see-more-button{
-                .this-project-button(@border-color:#dadee7; @button-height:47px;);
+                @bc: #dadee7;
+                .button(@r:27px; 47px);
+                .transition();
+                border: 1px solid @bc;
+                &:active{
+                    background-color: @bc;
+                    .transition(0;0);//Надо убрать транзишон, а то срабатывает  где не надо.
+                }
                 color: #0e1a35;
                 margin-top: 34px;
                 padding: 0 85px;
@@ -253,7 +280,10 @@ nav{
                     
                     left: -8px;
 
-                    h1{margin-bottom: 38px;}
+                    h1{
+                        margin-bottom: 38px;
+                        @media(max-width: @lg) { font-weight: 900; }
+                    }
                     div{
                         @media(min-width: @lg) { max-width:84%; }
                         p{

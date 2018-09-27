@@ -1,3 +1,14 @@
+/*
+Краткое описание описанных тут классов.
+.font-resp-style( ..{breakpoint}-sz.. ) - адаптивные шрифты для всех широт экрана
+    Производные : .h1-resp-style , .h3-resp-style;
+.rounded(@r) - округляет углы - радиус в процентах желательно.
+.transition(duration_animation; time_before_animation; animate_function);
+.text{aligment(r,c,l)}-{breakpoint} - выравнивает по нужному краю текст  и для определённых широт экрана.
+.unselectable() - делает элемент неспособным к выделеню текста внутри.
+.outlineless() - Убираем обводку при нажатии или выделении элемента
+.button (@r:27px; @button-height;)- минимальный шаблон для кнопки.
+*/
 .textr {
   text-align: right;
 }
@@ -141,7 +152,7 @@
 @media (max-width: 575px) {
   .container-fluid h1,
   .container h1 {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
@@ -182,7 +193,7 @@
 @media (max-width: 575px) {
   .container-fluid h3,
   .container h3 {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
@@ -217,7 +228,7 @@
 }
 @media (max-width: 575px) {
   p {
-    font-size: 11px;
+    font-size: 14px;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
@@ -227,7 +238,7 @@
 }
 @media (min-width: 768px) and (max-width: 991px) {
   p {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -245,6 +256,9 @@
     font-size: 18px;
   }
 }
+a {
+  outline: none;
+}
 html {
   height: 100%;
 }
@@ -256,7 +270,7 @@ nav {
   font-family: Roboto;
 }
 nav.bg-dark {
-  background-color: #0e1a35 !important;
+  background-color: transparent !important;
 }
 nav .container {
   margin-top: 54px;
@@ -278,15 +292,55 @@ nav .container .navbar-brand {
 nav .container .navbar-brand img {
   width: 100%;
 }
-nav .container .navbar-nav .nav-item .nav-link {
-  padding-top: 12px;
-  padding-right: 43.8px;
-  color: #fff;
+nav .container .navbar-nav .nav-item {
+  position: relative;
 }
-@media (max-width: 991px) {
-  nav .container .navbar-nav .nav-item .nav-link {
-    padding-right: 0px;
+@media (min-width: 992px) {
+  nav .container .navbar-nav .nav-item:nth-child(1) {
+    right: 50px;
   }
+  nav .container .navbar-nav .nav-item:nth-child(2) {
+    right: 41px;
+  }
+  nav .container .navbar-nav .nav-item:nth-child(3) {
+    right: 34px;
+  }
+  nav .container .navbar-nav .nav-item:nth-child(4) {
+    right: 23px;
+  }
+}
+nav .container .navbar-nav .nav-item .nav-link {
+  padding: 11px 20px;
+  color: #fff;
+  border-radius: 27px;
+  -moz-border-radius: 27px;
+  -webkit-border-radius: 27px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.5s ease-out 0.1s;
+  -moz-transition: 0.5s ease-out 0.1s;
+  -webkit-transition: 0.5s ease-out 0.1s;
+  -o-transition: 0.5s ease-out 0.1s;
+  border: 1px solid transparent;
+}
+nav .container .navbar-nav .nav-item .nav-link > div {
+  display: inline-block;
+  height: 50px;
+  vertical-align: middle;
+}
+nav .container .navbar-nav .nav-item .nav-link:hover {
+  transition: 0.5s ease-out 0.1s;
+  -moz-transition: 0.5s ease-out 0.1s;
+  -webkit-transition: 0.5s ease-out 0.1s;
+  -o-transition: 0.5s ease-out 0.1s;
+  border-color: #233a72;
+}
+nav .container .navbar-nav .nav-item .nav-link:active {
+  background-color: #233a72;
+  transition: 0s ease-out 0s;
+  -moz-transition: 0s ease-out 0s;
+  -webkit-transition: 0s ease-out 0s;
+  -o-transition: 0s ease-out 0s;
 }
 nav .container .navbar-nav .nav-item .login-btn {
   padding: 11px 43px;
@@ -307,7 +361,7 @@ nav .container .navbar-nav .nav-item .login-btn:hover {
   -moz-transition: 0.5s ease-out 0.1s;
   -webkit-transition: 0.5s ease-out 0.1s;
   -o-transition: 0.5s ease-out 0.1s;
-  border: 1px solid #233a72;
+  border-color: #233a72;
 }
 nav .container .navbar-nav .nav-item .login-btn:active {
   background-color: #233a72;
@@ -328,7 +382,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   background-repeat: no-repeat;
   -webkit-background-size: contain;
           background-size: contain;
-  background-position-y: 10%;
+  background-position-y: 35%;
 }
 .get-started {
   position: relative;
@@ -473,7 +527,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   -moz-transition: 0.5s ease-out 0.1s;
   -webkit-transition: 0.5s ease-out 0.1s;
   -o-transition: 0.5s ease-out 0.1s;
-  border: 1px solid transparent;
+  border: 1px solid #dadee7;
   color: #0e1a35;
   margin-top: 34px;
   padding: 0 85px;
@@ -485,13 +539,6 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   display: inline-block;
   height: 47px;
   vertical-align: middle;
-}
-.icon-features .container .row:not(.row-of-lines) .see-more-button:hover {
-  transition: 0.5s ease-out 0.1s;
-  -moz-transition: 0.5s ease-out 0.1s;
-  -webkit-transition: 0.5s ease-out 0.1s;
-  -o-transition: 0.5s ease-out 0.1s;
-  border: 1px solid #dadee7;
 }
 .icon-features .container .row:not(.row-of-lines) .see-more-button:active {
   background-color: #dadee7;
@@ -535,6 +582,11 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
   margin-bottom: 38px;
+}
+@media (max-width: 992px) {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
+    font-weight: 900;
+  }
 }
 @media (min-width: 992px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div {
