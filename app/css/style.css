@@ -387,11 +387,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 .get-started {
   position: relative;
   z-index: 0;
-}
-@media (min-height: 1050px) {
-  .get-started {
-    height: 100vh;
-  }
+  min-height: 100vh;
 }
 .get-started .container {
   height: 100%;
@@ -448,11 +444,6 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 @media (max-width: 992px) {
   .get-started .container .image-container img {
     width: 100%;
-  }
-}
-@media (max-width: 991px) {
-  .get-started {
-    height: 100vh;
   }
 }
 @media (min-width: 992px) {
