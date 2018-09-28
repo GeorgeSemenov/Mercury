@@ -10,40 +10,40 @@
   %body
     %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.absolutly
       .container
-        %a.navbar-brand(href="#")
+        %a.navbar-brand(href="#!")
           %img(alt="logo" src="img/nav/Logo.png")/
         %button.navbar-toggler(aria-controls="navbarSupportedContent" aria-label="Toggle navigation" data-target="#navbarSupportedContent" data-toggle="collapse" type="button")
           %span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
           %ul.navbar-nav.ml-auto.textc
             %li.nav-item
-              %a.nav-link(href="#") Features
+              %a.nav-link(href="#!") Featurse
             %li.nav-item
-              %a.nav-link(href="#") Pricing
+              %a.nav-link(href="#!") Pricing
             %li.nav-item
-              %a.nav-link(href="#") Blog
+              %a.nav-link(href="#!") Blog
             %li.nav-item
-              %a.nav-link(href="#") Contact
+              %a.nav-link(href="#!") Contact
             %li.nav-item
-              %a.nav-link.login-btn(href="#") Login
+              %a.nav-link.login-btn(href="#!") Login
     .header-background
     .get-started
       .container.textc
         %h1 Grow Your business with Merkury
         %h3 Your partner in crime!
         %div
-          %a.start-btn.outlineless.d-inline-block(href="#")
+          %a.start-btn.outlineless.d-inline-block(href="#!")
             %div
               / этот блок нужен, чтобы задать высоту ссылочной кнопке использую height и vertical align
             Get started
         .image-container
           %picture
-            %source(media="(min-width: 1200px)" srcset="img/firstScreen/dashboard-1400.png")
-            %source(media="(min-width: 992px)" srcset="img/firstScreen/dashboard-1096.png")
-            %source(media="(min-width: 768px)" srcset="img/firstScreen/dashboard-880.png")
-            %source(media="(min-width: 576px)" srcset="img/firstScreen/dashboard-672.png")
-            %source(sizes="100vw" srcset="img/firstScreen/dashboard-448.png")
-            %img.col-12.pr-0(alt="dashboard" src="img/firstScreen/dashboard.png")
+            %source(media="(min-width: 1200px)" srcset="img/firstScreen/dashboard-1200.png")
+            %source(media="(min-width: 992px)" srcset="img/firstScreen/dashboard-992.png")
+            %source(media="(min-width: 768px)" srcset="img/firstScreen/dashboard-768.png")
+            %source(media="(min-width: 576px)" srcset="img/firstScreen/dashboard-576.png")
+            %source(media="(max-width: 575px)" srcset="img/firstScreen/dashboard-576.png")
+            %img(alt="dashboard" src="img/firstScreen/dashboard.png")
     .icon-features
       .container
         .row.row-of-lines.d-none.d-lg-flex
@@ -55,7 +55,7 @@
               %img(alt="image for column #1" src="img/secondScreen/myw.png")/
             %h4 Manage Your Workflow
             %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            %a.see-more-button.outlineless(href="#")
+            %a.see-more-button.outlineless(href="#!")
               %div>
               See more
           .col-12.col-lg-4.textc.mx-auto.column-lg
@@ -63,7 +63,7 @@
               %img(alt="image for column #2" src="img/secondScreen/ai.png")/
             %h4 Analytics &amp; Insights
             %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            %a.see-more-button.outlineless(href="#")
+            %a.see-more-button.outlineless(href="#!")
               %div>
               See more
           .col-12.col-lg-4.textc.column-lg
@@ -71,15 +71,15 @@
               %img(alt="image for column #3" src="img/secondScreen/oyd.png")/
             %h4 Organize Your Deadlines
             %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            %a.see-more-button.outlineless(href="#")
+            %a.see-more-button.outlineless(href="#!")
               %div>
               See more
     .all-your-need-is-a-love
       .container-fluid
         .row
           .col-12.col-lg-6
-            .col-xl-9.ml-auto
-              %h1.textl.d-inline-block All You need is a browser!
+            .col-xl-9.ml-auto.textc.textl-lg
+              %h1.textl All You need is a browser!
               %div
                 %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 %p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
@@ -96,4 +96,7 @@
               %source(media="(min-width: 576px)" srcset="img/screenAllYourNeedIsABrowser/Grupa2-576.png")
               %source(sizes="100vw" srcset="img/screenAllYourNeedIsABrowser/Grupa2-320.png")
               %img.col-12.p-0(alt="Lotus" src="img/screenAllYourNeedIsABrowser/Grupa2.png")
+    .drag-and-drop-screen
+      .container
+
     %script(src="js/libs.min.js")

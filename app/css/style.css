@@ -573,13 +573,14 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
   margin-bottom: 38px;
+  max-width: 94%;
 }
 @media (max-width: 992px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
     font-weight: 900;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1758px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div {
     max-width: 84%;
   }
@@ -591,7 +592,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   margin-top: 30px;
 }
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul {
-  margin-top: 57px;
+  margin-top: 54px;
   position: relative;
   right: 38px;
 }
@@ -629,19 +630,25 @@ nav .container .navbar-nav .nav-item .login-btn:active {
     font-size: 22px;
   }
 }
-.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li:before {
-  content: '';
-  display: inline-block;
-  background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
-  -webkit-background-size: cover;
-          background-size: cover;
-  width: 28px;
-  height: 28px;
-  margin-right: 17px;
+@media (min-width: 992px) {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
+    background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
+    background-repeat: no-repeat;
+    padding-left: 45px;
+    padding-top: 5px;
+  }
 }
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li span {
   position: relative;
   bottom: 7px;
+}
+@media (max-width: 991px) {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li span {
+    background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
+    background-repeat: no-repeat;
+    padding-left: 45px;
+    padding-bottom: 10px;
+  }
 }
 .all-your-need-is-a-love .container-fluid .row div.d-none {
   -webkit-background-size: 105% 105%;

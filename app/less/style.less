@@ -279,9 +279,10 @@ nav{
                     h1{
                         margin-bottom: 38px;
                         @media(max-width: @lg) { font-weight: 900; }
+                        max-width: 94%;
                     }
                     div{
-                        @media(min-width: @lg) { max-width:84%; }
+                        @media(min-width: 1758px) { max-width:84%; }
                         p{
                             line-height: 30px;
 
@@ -290,7 +291,7 @@ nav{
                             }
                         }
                         ul{
-                            margin-top: 57px;
+                            margin-top: 54px;
                             position: relative;
                             right: 38px;
                             li{
@@ -298,20 +299,22 @@ nav{
                                 .font-resp-style(@xs-sz: 15px; @md-sz: 19px; @lg-sz: 22px);
                                 margin-bottom: 24px;
 
-                                &:before{
-                                    @marker-size: 28px;
-                                    content: '';
-                                    display: inline-block;
-                                    background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
-                                    background-size: cover;
-                                    width: @marker-size;
-                                    height: @marker-size;
-                                    margin-right: 17px;
-                                }
+                                @media(min-width: @lg) { 
+                                        background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
+                                        background-repeat: no-repeat;
+                                        padding-left: 45px;
+                                        padding-top: 5px;
+                                   }
 
                                 span{
                                     position: relative;
                                     bottom: 7px;
+                                    @media(max-width: @lg - 1) { 
+                                        background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
+                                        background-repeat: no-repeat;
+                                        padding-left: 45px;
+                                        padding-bottom: 10px;
+                                   }
                                 }
                             }
                         }
