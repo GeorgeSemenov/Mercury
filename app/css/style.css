@@ -243,17 +243,17 @@
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   p {
-    font-size: 18px;
+    font-size: 18.3px;
   }
 }
 @media (min-width: 1200px) and (max-width: 1699px) {
   p {
-    font-size: 18px;
+    font-size: 18.3px;
   }
 }
 @media (min-width: 1700px) {
   p {
-    font-size: 18px;
+    font-size: 18.3px;
   }
 }
 a {
@@ -562,6 +562,11 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 .all-your-need-is-a-love {
   font-family: Roboto;
 }
+@media (min-width: 992px) {
+  .all-your-need-is-a-love {
+    min-height: 68.6%;
+  }
+}
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto {
   position: relative;
   left: -8px;
@@ -660,4 +665,117 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 .all-your-need-is-a-love .container-fluid .row div.d-none picture {
   position: relative;
   top: 1%;
+}
+.drag-and-drop-screen {
+  background-color: #0e1a35;
+}
+@media (min-width: 992px) {
+  .drag-and-drop-screen {
+    position: relative;
+    height: 751px;
+  }
+}
+@media (max-width: 991px) {
+  .drag-and-drop-screen {
+    height: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .drag-and-drop-screen > .container-fluid {
+    height: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .drag-and-drop-screen > .container-fluid {
+    position: absolute;
+    top: 141px;
+    bottom: 0px;
+  }
+}
+.drag-and-drop-screen > .container-fluid > .row {
+  height: 100%;
+}
+.drag-and-drop-screen > .container-fluid > .row .dnd-image picture {
+  position: relative;
+  top: 2%;
+}
+.drag-and-drop-screen > .container-fluid > .row .dnd-image picture img {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .drag-and-drop-screen > .container-fluid > .row .dnd-image picture img {
+    width: 88%;
+    max-width: 1000px;
+  }
+}
+.drag-and-drop-screen > .container-fluid > .row .carousel {
+  height: 100%;
+}
+@media (min-width: 992px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel {
+    position: absolute;
+    right: 0;
+    top: 69px;
+    left: 0px;
+  }
+}
+@media (min-width: 992px) and (min-width: 1200px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel {
+    left: 50px;
+  }
+}
+@media (min-width: 992px) and (min-width: 1400px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel {
+    left: 137px;
+  }
+}
+.drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner {
+  height: 100%;
+}
+.drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner a {
+  position: absolute;
+}
+@media (max-width: 991px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner a {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner a {
+    bottom: 268px;
+    left: 24px;
+  }
+}
+@media (min-width: 992px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner a + a {
+    left: 78px;
+  }
+}
+.drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel h1 {
+  color: #fff;
+  display: inline-block;
+  margin-right: auto;
+}
+.drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container {
+  position: relative;
+  top: 29px;
+  left: 5px;
+}
+.drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container p {
+  color: #8691aa;
+  line-height: 30px;
+}
+@media (min-width: 992px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container p {
+    position: relative;
+    width: 400px;
+  }
+}
+@media (min-width: 992px) and (min-width: 1200px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container p {
+    width: 520px;
+  }
+}
+.drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container p + p {
+  top: 14px;
 }

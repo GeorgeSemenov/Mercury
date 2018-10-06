@@ -79,7 +79,7 @@
         .row
           .col-12.col-lg-6
             .col-xl-9.ml-auto.textc.textl-lg
-              %h1.textl All You need is a browser!
+              %h1.d-block All You need is a browser!
               %div
                 %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 %p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
@@ -97,6 +97,44 @@
               %source(sizes="100vw" srcset="img/screenAllYourNeedIsABrowser/Grupa2-320.png")
               %img.col-12.p-0(alt="Lotus" src="img/screenAllYourNeedIsABrowser/Grupa2.png")
     .drag-and-drop-screen
-      .container
-
+      .container-fluid
+        .row
+          .col-12.col-lg-6.ml-auto.dnd-image.order-12.order-lg-1
+            %picture
+              %source(media="(min-width: 1200px)" srcset="img/4Drag&Drop/Workflow-1200.png")
+              %source(media="(min-width: 992px)" srcset="img/4Drag&Drop/Workflow-992.png")
+              %source(media="(min-width: 768px)" srcset="img/4Drag&Drop/Workflow-768.png")
+              %source(media="(min-width: 576px)" srcset="img/4Drag&Drop/Workflow-576.png")
+              %source(media="(max-width: 575px)" srcset="img/4Drag&Drop/Workflow-448.png")
+              %img.d-block.ml-auto(alt="workflow" src="img/4Drag&Drop/Workflow.png")
+          .col-12.col-lg-6.order-1.order-lg-12
+            / Карусель сделана на основе https://getbootstrap.com/docs/4.0/components/carousel/
+            #DragAndDropCarousel.carousel.slide(data-ride="carousel")
+              .carousel-inner
+                .container-fluid
+                  .carousel-item.active
+                    .row.text-carousel
+                      .col-12.header-container
+                        %h1 Drag & Drop
+                      .col-12.text-container
+                        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        %p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                  .carousel-item
+                      .row.text-carousel
+                        .col-12.header-container
+                          %h1 Drag & Drag
+                        .col-12.text-container
+                          %p Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  .carousel-item
+                      .row.text-carousel
+                        .col-12.header-container
+                          %h1 Drag & Drop
+                        .col-12.text-container
+                          %p Lorem ipsum dolor sit amet,
+                          %p Ut enim ad minim veniam, 
+                %a.left.carousel-control(data-slide="prev" href="#DragAndDropCarousel")
+                  %img(alt="arrow left" src="img/4Drag&Drop/Arrow_left.png")
+                %a.right.carousel-control(data-slide="next" href="#DragAndDropCarousel")
+                  %img(alt="arrow right" src="img/4Drag&Drop/Arrow_right.png")
     %script(src="js/libs.min.js")

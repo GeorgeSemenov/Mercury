@@ -20,7 +20,7 @@
     .h3-resp-style(@xl-size:36px);
 }
 p{
-    .font-resp-style(@xs-sz: 14px; @md-sz: 16px; @lg-sz: 18px);
+    .font-resp-style(@xs-sz: 14px; @md-sz: 16px; @lg-sz: 18.3px);
 }
 a{.outlineless();}
 @dark-screen-color: #0e1a35;
@@ -266,6 +266,9 @@ nav{
     }
 }
 .all-your-need-is-a-love{
+    @media(min-width: @lg) { 
+        min-height: 68.6%;
+    }
     font-family: Roboto;
     .container-fluid{
         .row{
@@ -334,5 +337,99 @@ nav{
             }
         }
 
+    }
+}
+
+.drag-and-drop-screen{
+    background-color: @dark-screen-color;
+    @media(min-width: @lg) { 
+        position: relative;
+        height: 751px; //Такой размер был на прототипе для lg широт.
+    }
+    @media(max-width: @lg - 1) { height: 100%;}
+    &>.container-fluid{
+        @media(max-width: @lg - 1) { height: 100%;}
+        @media(min-width: @lg) { 
+            position: absolute;
+            top: 141px;
+            bottom: 0px;
+        }
+
+
+        &>.row{
+            height: 100%;
+
+            .dnd-image{
+                 picture{
+                    position: relative;
+                    top: 2%;
+                    img{
+                        width: 100%;
+                        @media(min-width: @lg) { 
+                            width: 88%;
+                            max-width: 1000px;
+                        }
+                    }
+                 }
+            }
+            
+            .carousel{
+                @media(min-width: @lg) { 
+                    position: absolute;
+                    right: 0;
+                    top: 69px;
+                    @media(min-width: @xl) { left: 50px;}
+                    @media(min-width: 1400px) {left: 137px;}
+                    left: 0px;
+                }
+                height: 100%;
+
+                .carousel-inner{
+                    height: 100%;
+
+                    a{//Кнопочки на карусели
+                        position: absolute;
+                        @media(max-width: @lg - 1) { display: none;}
+                        @media(min-width: @lg) { 
+                            bottom: 268px;
+                            left: 24px;
+                        }
+
+                        &+a{
+                            @media(min-width: @lg) { 
+                                left: 78px;
+                            }
+                        }
+                    }
+                    
+                    .text-carousel{
+                        h1{
+                            color:#fff;
+                            display: inline-block;
+                            margin-right: auto;
+                        }
+
+                        .text-container{
+                            position: relative;
+                            top: 29px;
+                            left: 5px;
+
+                            p{
+                                color:#8691aa;
+                                line-height: 30px;
+                                @media(min-width: @lg) { 
+                                    position: relative;
+                                    @media(min-width: @xl) { width: 520px;}
+                                    width: 400px;
+                                }
+
+                                &+p{top: 14px;}
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
