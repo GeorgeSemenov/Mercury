@@ -675,16 +675,6 @@ nav .container .navbar-nav .nav-item .login-btn:active {
     height: 751px;
   }
 }
-@media (max-width: 991px) {
-  .drag-and-drop-screen {
-    height: 100%;
-  }
-}
-@media (max-width: 991px) {
-  .drag-and-drop-screen > .container-fluid {
-    height: 100%;
-  }
-}
 @media (min-width: 992px) {
   .drag-and-drop-screen > .container-fluid {
     position: absolute;
@@ -729,8 +719,28 @@ nav .container .navbar-nav .nav-item .login-btn:active {
     left: 137px;
   }
 }
+@media (max-width: 991px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel {
+    padding-top: 10px;
+  }
+}
 .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner {
   height: 100%;
+}
+@media (max-width: 991px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner {
+    height: 200px;
+  }
+}
+@media (max-width: 830px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner {
+    height: 250px;
+  }
+}
+@media (max-width: 410px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner {
+    height: 300px;
+  }
 }
 .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner a {
   position: absolute;
@@ -756,14 +766,29 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   display: inline-block;
   margin-right: auto;
 }
+@media (max-width: 991px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .header-container {
+    text-align: center;
+  }
+}
 .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container {
   position: relative;
   top: 29px;
   left: 5px;
 }
+@media (max-width: 991px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container {
+    text-align: center;
+  }
+}
 .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container p {
   color: #8691aa;
   line-height: 30px;
+}
+@media (max-width: 991px) {
+  .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container p {
+    widows: 90%;
+  }
 }
 @media (min-width: 992px) {
   .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container p {

@@ -346,9 +346,7 @@ nav{
         position: relative;
         height: 751px; //Такой размер был на прототипе для lg широт.
     }
-    @media(max-width: @lg - 1) { height: 100%;}
     &>.container-fluid{
-        @media(max-width: @lg - 1) { height: 100%;}
         @media(min-width: @lg) { 
             position: absolute;
             top: 141px;
@@ -382,10 +380,15 @@ nav{
                     @media(min-width: 1400px) {left: 137px;}
                     left: 0px;
                 }
+                @media(max-width: @lg - 1) { padding-top: 10px;}
                 height: 100%;
 
                 .carousel-inner{
                     height: 100%;
+                    @mobile-height : 300px;//Какой должна быть высота карусели при ширине экрана 320 px
+                    @media(max-width: @lg - 1) { height: @mobile-height*2/3;}
+                    @media(max-width: 830px) { height: @mobile-height*5/6;}
+                    @media(max-width: 410px) { height: @mobile-height;}
 
                     a{//Кнопочки на карусели
                         position: absolute;
@@ -409,14 +412,20 @@ nav{
                             margin-right: auto;
                         }
 
+                        .header-container{
+                            @media(max-width: @lg - 1) { text-align: center;}
+                        }
+
                         .text-container{
                             position: relative;
                             top: 29px;
                             left: 5px;
+                            @media(max-width: @lg - 1) { text-align: center;}
 
                             p{
                                 color:#8691aa;
                                 line-height: 30px;
+                                @media(max-width: @lg - 1) { widows: 90%;}
                                 @media(min-width: @lg) { 
                                     position: relative;
                                     @media(min-width: @xl) { width: 520px;}
