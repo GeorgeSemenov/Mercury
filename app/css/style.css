@@ -804,3 +804,41 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container p + p {
   top: 14px;
 }
+.powerfull-psd .container {
+  position: relative;
+  text-align: center;
+}
+.powerfull-psd .container p,
+.powerfull-psd .container picture {
+  position: relative;
+}
+@media (min-width: 1500px) {
+  .powerfull-psd .container {
+    max-width: 1440px;
+  }
+}
+@media (min-width: 992px) {
+  .powerfull-psd .container {
+    top: 93px;
+  }
+  .powerfull-psd .container .col-12 p {
+    top: 30px;
+  }
+  .powerfull-psd .container .col-12 picture {
+    top: 101px;
+  }
+  .powerfull-psd .container .top-height {
+    height: 224px;
+  }
+}
+@media (max-width: 991px) {
+  .powerfull-psd .container {
+    top: 30px;
+  }
+  .powerfull-psd .container .col-12 p {
+    top: 20px;
+  }
+  .powerfull-psd .container .col-12 picture {
+    top: 50px;
+  }
+}

@@ -442,3 +442,32 @@ nav{
         }
     }
 }
+
+.powerfull-psd{
+    .container{
+        position: relative;
+        text-align: center;
+        p,picture{position: relative;}
+        @media(min-width: 1500px) { max-width: 1440px;}
+        @media(min-width: @lg) { 
+            //Объявляем переменные.
+            @p-top : 30px;
+            @picture-top : 101px;
+            @container-top : 93px;
+            top: @container-top;
+
+            .col-12{
+                p{top: @p-top;}
+                picture{top: @picture-top;}
+            }
+            .top-height{height: @p-top + @picture-top + @container-top;}
+        }
+        @media(max-width: @lg - 1) { 
+            top: 30px;
+            .col-12{
+                p{top: 20px;}
+                picture{top: 50px;}
+            }
+        }
+    }
+}
