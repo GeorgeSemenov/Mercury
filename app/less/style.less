@@ -444,30 +444,40 @@ nav{
 }
 
 .powerfull-psd{
+    @xxl : 1500px;
+    background-color: #f4f5f7;
     .container{
-        position: relative;
         text-align: center;
-        p,picture{position: relative;}
-        @media(min-width: 1500px) { max-width: 1440px;}
+        p,picture,.col-12{position: relative;}
+        //Для десктопа.
         @media(min-width: @lg) { 
+            height: 730px;
             //Объявляем переменные.
+            @col-12-top : 93px;
             @p-top : 30px;
-            @picture-top : 101px;
-            @container-top : 93px;
-            top: @container-top;
+            @picture-top : 10px;
 
             .col-12{
+                top: @col-12-top;
                 p{top: @p-top;}
                 picture{top: @picture-top;}
             }
-            .top-height{height: @p-top + @picture-top + @container-top;}
         }
-        @media(max-width: @lg - 1) { 
-            top: 30px;
+        @media(min-width: @xl) { height: 790px;}
+        @media(min-width: @xxl) { 
+            height: 930px;
+            max-width: 1440px;
+        }
+        //Для мобилок
+        @media(max-width: @lg - 1) { //Для всех мобилковых разрешений
+            height: 500px;
             .col-12{
+                top: 30px;
                 p{top: 20px;}
-                picture{top: 50px;}
+                // picture{top: 50px;}
             }
+        @media(max-width: @md - 1) { height: 420px;}
+        @media(max-width: @sm - 1) { height: 400px;}
         }
     }
 }

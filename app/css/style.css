@@ -804,41 +804,60 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 .drag-and-drop-screen > .container-fluid > .row .carousel .carousel-inner .text-carousel .text-container p + p {
   top: 14px;
 }
+.powerfull-psd {
+  background-color: #f4f5f7;
+}
 .powerfull-psd .container {
-  position: relative;
   text-align: center;
 }
 .powerfull-psd .container p,
-.powerfull-psd .container picture {
+.powerfull-psd .container picture,
+.powerfull-psd .container .col-12 {
   position: relative;
-}
-@media (min-width: 1500px) {
-  .powerfull-psd .container {
-    max-width: 1440px;
-  }
 }
 @media (min-width: 992px) {
   .powerfull-psd .container {
+    height: 730px;
+  }
+  .powerfull-psd .container .col-12 {
     top: 93px;
   }
   .powerfull-psd .container .col-12 p {
     top: 30px;
   }
   .powerfull-psd .container .col-12 picture {
-    top: 101px;
+    top: 10px;
   }
-  .powerfull-psd .container .top-height {
-    height: 224px;
+}
+@media (min-width: 1200px) {
+  .powerfull-psd .container {
+    height: 790px;
+  }
+}
+@media (min-width: 1500px) {
+  .powerfull-psd .container {
+    height: 930px;
+    max-width: 1440px;
   }
 }
 @media (max-width: 991px) {
   .powerfull-psd .container {
+    height: 500px;
+  }
+  .powerfull-psd .container .col-12 {
     top: 30px;
   }
   .powerfull-psd .container .col-12 p {
     top: 20px;
   }
-  .powerfull-psd .container .col-12 picture {
-    top: 50px;
+}
+@media (max-width: 991px) and (max-width: 767px) {
+  .powerfull-psd .container {
+    height: 420px;
+  }
+}
+@media (max-width: 991px) and (max-width: 575px) {
+  .powerfull-psd .container {
+    height: 400px;
   }
 }
