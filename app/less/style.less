@@ -1,15 +1,25 @@
 @import "_default.less";
-@font-face{
-    font-family:Roboto;
-    src: url(../fonts/roboto-regular.ttf);
+@font-face {
+    font-family: 'roboto-thin';
+    src: url('../fonts/roboto/thin/roboto-thin-webfont.woff2') format('woff2'),
+         url('../fonts/roboto/thin/roboto-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face{
-    font-family:roboto-thin;
-    src: url(../fonts/roboto-thin.ttf);
+    font-family:Roboto;
+    src: url('../fonts/roboto/regular/roboto-regular-webfont.woff2') format('woff2'),
+         url('../fonts/roboto/regular/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face{
     font-family:roboto-bold;
     src: url(../fonts/roboto-bold.ttf);
+    src: url('../fonts/roboto/bold/roboto-bold-webfont.woff2') format('woff2'),
+         url('../fonts/roboto/bold/roboto-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 .container-fluid h1, .container h1{
     font-family:roboto-thin;
@@ -228,6 +238,9 @@ nav{
                 .button(@r:27px; 47px);
                 .transition();
                 border: 1px solid @bc;
+                &:hover{
+                    border-color: #bbb ;
+                }
                 &:active{
                     background-color: @bc;
                     .transition(0;0);//Надо убрать транзишон, а то срабатывает  где не надо.
@@ -317,6 +330,7 @@ nav{
                                         background-repeat: no-repeat;
                                         padding-left: 45px;
                                         padding-bottom: 10px;
+                                        @media(max-width: 400px) { padding-left: 30px;}
                                    }
                                 }
                             }
@@ -451,7 +465,7 @@ nav{
         p,picture,.col-12{position: relative;}
         //Для десктопа.
         @media(min-width: @lg) { 
-            height: 730px;
+            height: 786px;
             //Объявляем переменные.
             @col-12-top : 93px;
             @p-top : 30px;
@@ -463,21 +477,21 @@ nav{
                 picture{top: @picture-top;}
             }
         }
-        @media(min-width: @xl) { height: 790px;}
+        @media(min-width: @xl) { height: 846px;}
         @media(min-width: @xxl) { 
-            height: 930px;
+            height: 1021px;
             max-width: 1440px;
         }
         //Для мобилок
         @media(max-width: @lg - 1) { //Для всех мобилковых разрешений
-            height: 500px;
+            height: 542px;
             .col-12{
                 top: 30px;
                 p{top: 20px;}
                 // picture{top: 50px;}
             }
-        @media(max-width: @md - 1) { height: 420px;}
-        @media(max-width: @sm - 1) { height: 400px;}
+        @media(max-width: @md - 1) { height: 444px;}
+        @media(max-width: @sm - 1) { height: 438px;}
         }
     }
 }

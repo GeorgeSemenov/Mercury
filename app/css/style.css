@@ -133,16 +133,23 @@
   outline: none;
 }
 @font-face {
-  font-family: Roboto;
-  src: url(../fonts/roboto-regular.ttf);
+  font-family: 'roboto-thin';
+  src: url('../fonts/roboto/thin/roboto-thin-webfont.woff2') format('woff2'), url('../fonts/roboto/thin/roboto-thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-  font-family: roboto-thin;
-  src: url(../fonts/roboto-thin.ttf);
+  font-family: Roboto;
+  src: url('../fonts/roboto/regular/roboto-regular-webfont.woff2') format('woff2'), url('../fonts/roboto/regular/roboto-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: roboto-bold;
   src: url(../fonts/roboto-bold.ttf);
+  src: url('../fonts/roboto/bold/roboto-bold-webfont.woff2') format('woff2'), url('../fonts/roboto/bold/roboto-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 .container-fluid h1,
 .container h1 {
@@ -531,6 +538,9 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   height: 47px;
   vertical-align: middle;
 }
+.icon-features .container .row:not(.row-of-lines) .see-more-button:hover {
+  border-color: #bbb;
+}
 .icon-features .container .row:not(.row-of-lines) .see-more-button:active {
   background-color: #dadee7;
   transition: 0s ease-out 0s;
@@ -653,6 +663,11 @@ nav .container .navbar-nav .nav-item .login-btn:active {
     background-repeat: no-repeat;
     padding-left: 45px;
     padding-bottom: 10px;
+  }
+}
+@media (max-width: 991px) and (max-width: 400px) {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li span {
+    padding-left: 30px;
   }
 }
 .all-your-need-is-a-love .container-fluid .row div.d-none {
@@ -817,7 +832,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 @media (min-width: 992px) {
   .powerfull-psd .container {
-    height: 730px;
+    height: 786px;
   }
   .powerfull-psd .container .col-12 {
     top: 93px;
@@ -831,18 +846,18 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 @media (min-width: 1200px) {
   .powerfull-psd .container {
-    height: 790px;
+    height: 846px;
   }
 }
 @media (min-width: 1500px) {
   .powerfull-psd .container {
-    height: 930px;
+    height: 1021px;
     max-width: 1440px;
   }
 }
 @media (max-width: 991px) {
   .powerfull-psd .container {
-    height: 500px;
+    height: 542px;
   }
   .powerfull-psd .container .col-12 {
     top: 30px;
@@ -853,11 +868,11 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 @media (max-width: 991px) and (max-width: 767px) {
   .powerfull-psd .container {
-    height: 420px;
+    height: 444px;
   }
 }
 @media (max-width: 991px) and (max-width: 575px) {
   .powerfull-psd .container {
-    height: 400px;
+    height: 438px;
   }
 }
