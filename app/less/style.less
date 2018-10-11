@@ -282,23 +282,24 @@ nav{
     @media(min-width: @lg) { 
         min-height: 68.6%;
     }
+    @top: 7vh;//Ровно на столько сдвивагется по вертикали блок со списком
     font-family: Roboto;
     .container-fluid{
         .row{
             div.col-12{
                 div.ml-auto{
-                    @media (min-width: (@lg)){top: 12%}
+                    @media (min-width: (@lg)){top: @top;}
                     position: relative;
                     
                     left: -8px;
 
                     h1{
-                        margin-bottom: 38px;
-                        @media(max-width: @lg) { font-weight: 900; }
+                        margin-bottom: 34px;
                         max-width: 94%;
+                        @media(max-width: @lg) { font-weight: 900; }
                     }
                     div{
-                        @media(min-width: 1758px) { max-width:84%; }
+                        @media(min-width: 1758px) {  }
                         p{
                             line-height: 30px;
 
@@ -310,33 +311,49 @@ nav{
                             margin-top: 54px;
                             position: relative;
                             right: 38px;
+                            @media(max-width: @lg - 1) { right: 25px;}
                             li{
                                 list-style: none;
                                 .font-resp-style(@xs-sz: 15px; @md-sz: 19px; @lg-sz: 22px);
-                                margin-bottom: 24px;
+                                margin-bottom: 26px;
 
                                 @media(min-width: @lg) { 
-                                        background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
                                         background-repeat: no-repeat;
                                         padding-left: 45px;
-                                        padding-top: 5px;
                                    }
 
-                                span{
+                                .li-content{
+                                    @marker-side: 28px;
+                                    display: inline-block;
                                     position: relative;
-                                    bottom: 7px;
-                                    @media(max-width: @lg - 1) { 
-                                        background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
-                                        background-repeat: no-repeat;
-                                        padding-left: 45px;
-                                        padding-bottom: 10px;
-                                        @media(max-width: 400px) { padding-left: 30px;}
-                                   }
+
+                                    .marker-container{
+                                        position: absolute;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: -1 * @marker-side - 5 ;
+                                        @media(min-width: @lg) { left: -1 * @marker-side - 20;}
+                                        .marker{
+                                            width: @marker-side;
+                                            height: @marker-side;
+                                            background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
+                                            position: relative;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                        }
+                                    }
+                                    .text-container{ 
+                                        .text{
+                                            display: inline-block;
+                                            position: relative;
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
                 }
+                .additional-height{height:  @top;}//Блок с дополнительной высотой, который компенсирует отступ блока со списком
             }
             div.d-none{
                 background-size: 105%;

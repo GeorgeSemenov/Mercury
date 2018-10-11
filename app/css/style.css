@@ -8,6 +8,7 @@
 .unselectable() - делает элемент неспособным к выделеню текста внутри.
 .outlineless() - Убираем обводку при нажатии или выделении элемента
 .button (@r:27px; @button-height;)- минимальный шаблон для кнопки.
+.ul (@img-path; @marker-side:20px; @li-margin-bottom:0px; @marker-left: 0px;) - шаблон для адаптивного списка
 */
 .textr {
   text-align: right;
@@ -583,21 +584,16 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 @media (min-width: 992px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto {
-    top: 12%;
+    top: 7vh;
   }
 }
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
-  margin-bottom: 38px;
+  margin-bottom: 34px;
   max-width: 94%;
 }
 @media (max-width: 992px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
     font-weight: 900;
-  }
-}
-@media (min-width: 1758px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div {
-    max-width: 84%;
   }
 }
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div p {
@@ -611,9 +607,14 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   position: relative;
   right: 38px;
 }
+@media (max-width: 991px) {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul {
+    right: 25px;
+  }
+}
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
   list-style: none;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 @media (max-width: 575px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
@@ -647,28 +648,41 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 @media (min-width: 992px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
-    background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
     background-repeat: no-repeat;
     padding-left: 45px;
-    padding-top: 5px;
   }
 }
-.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li span {
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li .li-content {
+  display: inline-block;
   position: relative;
-  bottom: 7px;
 }
-@media (max-width: 991px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li span {
-    background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
-    background-repeat: no-repeat;
-    padding-left: 45px;
-    padding-bottom: 10px;
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li .li-content .marker-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -33px;
+}
+@media (min-width: 992px) {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li .li-content .marker-container {
+    left: -48px;
   }
 }
-@media (max-width: 991px) and (max-width: 400px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li span {
-    padding-left: 30px;
-  }
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li .li-content .marker-container .marker {
+  width: 28px;
+  height: 28px;
+  background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li .li-content .text-container .text {
+  display: inline-block;
+  position: relative;
+}
+.all-your-need-is-a-love .container-fluid .row div.col-12 .additional-height {
+  height: 7vh;
 }
 .all-your-need-is-a-love .container-fluid .row div.d-none {
   -webkit-background-size: 105% 105%;

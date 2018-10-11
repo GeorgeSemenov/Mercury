@@ -8,6 +8,7 @@
 .unselectable() - делает элемент неспособным к выделеню текста внутри.
 .outlineless() - Убираем обводку при нажатии или выделении элемента
 .button (@r:27px; @button-height;)- минимальный шаблон для кнопки.
+.ul (@img-path; @marker-side:20px; @li-margin-bottom:0px; @marker-left: 0px;) - шаблон для адаптивного списка
 */
 @sm: 576px;
 @md: 768px;
@@ -151,5 +152,37 @@
         display: inline-block;
         height: @button-height;
         vertical-align: middle;//Если не понимаешь зачем тут это свойство, то читай в css>проблемы со свойствами>vertical-align
+    }
+}
+.ul (@img-path; @marker-side:20px; @li-margin-bottom:0px; @marker-left: 0px;){
+    li{
+        list-style: none;
+
+        .li-content{
+            display: inline-block;
+            position: relative;
+            margin-bottom: @li-margin-bottom;
+
+            .marker-container{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -1 * @marker-side + @marker-left;
+            .marker{
+                width: @marker-side;
+                height: @marker-side;
+                background-image: url(@img-path);
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                }
+            }
+            .text-container{ 
+                .text{
+                    display: inline-block;
+                    position: relative;
+                }
+            }
+        }
     }
 }
