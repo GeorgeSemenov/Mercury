@@ -589,85 +589,90 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
   margin-bottom: 34px;
-  max-width: 94%;
+  max-width: 95%;
 }
 @media (max-width: 992px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
     font-weight: 900;
   }
 }
-.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div p {
+@media (min-width: 1758px) {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text {
+    max-width: 86%;
+  }
+}
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text p {
   line-height: 30px;
 }
-.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div p + p {
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text p + p {
   margin-top: 30px;
 }
-.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul {
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul {
   margin-top: 54px;
   position: relative;
   right: 38px;
 }
 @media (max-width: 991px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul {
     right: 25px;
   }
 }
-.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li {
   list-style: none;
   margin-bottom: 26px;
 }
 @media (max-width: 575px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li {
     font-size: 15px;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li {
     font-size: 1.1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li {
     font-size: 19px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li {
     font-size: 22px;
   }
 }
 @media (min-width: 1200px) and (max-width: 1699px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li {
     font-size: 22px;
   }
 }
 @media (min-width: 1700px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li {
     font-size: 22px;
   }
 }
 @media (min-width: 992px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li {
     background-repeat: no-repeat;
     padding-left: 45px;
   }
 }
-.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li .li-content {
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li .li-content {
   display: inline-block;
   position: relative;
 }
-.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li .li-content .marker-container {
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li .li-content .li-marker-container {
   position: absolute;
   top: 0;
   bottom: 0;
   left: -33px;
 }
 @media (min-width: 992px) {
-  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li .li-content .marker-container {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li .li-content .li-marker-container {
     left: -48px;
   }
 }
-.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li .li-content .marker-container .marker {
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li .li-content .li-marker-container .li-marker {
   width: 28px;
   height: 28px;
   background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
@@ -677,7 +682,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto div ul li .li-content .text-container .text {
+.all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li .li-content .li-text-container .li-text {
   display: inline-block;
   position: relative;
 }
@@ -715,6 +720,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   height: 100%;
 }
 .drag-and-drop-screen > .container-fluid > .row .dnd-image picture {
+  display: block;
   position: relative;
   top: 2%;
 }
@@ -889,4 +895,32 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   .powerfull-psd .container {
     height: 438px;
   }
+}
+.pricing ul.pros-and-cons li {
+  list-style: none;
+}
+.pricing ul.pros-and-cons li .li-content {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0px;
+}
+.pricing ul.pros-and-cons li .li-content .li-marker-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -24px;
+}
+.pricing ul.pros-and-cons li .li-content .li-marker-container .li-marker {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/6pricing/pros.png");
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.pricing ul.pros-and-cons li .li-content .li-text-container .li-text {
+  display: inline-block;
+  position: relative;
 }

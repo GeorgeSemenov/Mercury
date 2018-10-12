@@ -295,11 +295,11 @@ nav{
 
                     h1{
                         margin-bottom: 34px;
-                        max-width: 94%;
+                        max-width: 95%;
                         @media(max-width: @lg) { font-weight: 900; }
                     }
-                    div{
-                        @media(min-width: 1758px) {  }
+                    .text{
+                        @media(min-width: 1758px) { max-width: 86%; }
                         p{
                             line-height: 30px;
 
@@ -327,13 +327,13 @@ nav{
                                     display: inline-block;
                                     position: relative;
 
-                                    .marker-container{
+                                    .li-marker-container{
                                         position: absolute;
                                         top: 0;
                                         bottom: 0;
                                         left: -1 * @marker-side - 5 ;
                                         @media(min-width: @lg) { left: -1 * @marker-side - 20;}
-                                        .marker{
+                                        .li-marker{
                                             width: @marker-side;
                                             height: @marker-side;
                                             background-image: url(../img/screenAllYourNeedIsABrowser/marker.png);
@@ -342,8 +342,8 @@ nav{
                                             transform: translateY(-50%);
                                         }
                                     }
-                                    .text-container{ 
-                                        .text{
+                                    .li-text-container{ 
+                                        .li-text{
                                             display: inline-block;
                                             position: relative;
                                         }
@@ -390,6 +390,7 @@ nav{
 
             .dnd-image{
                  picture{
+                    display: block;
                     position: relative;
                     top: 2%;
                     img{
@@ -510,5 +511,11 @@ nav{
         @media(max-width: @md - 1) { height: 444px;}
         @media(max-width: @sm - 1) { height: 438px;}
         }
+    }
+}
+
+.pricing{
+    ul.pros-and-cons{
+        .ul(@img-path:"../img/6pricing/pros.png"; @marker-side: 24px);
     }
 }
