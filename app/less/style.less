@@ -29,6 +29,10 @@
     font-family:Roboto;
     .h3-resp-style(@xl-size:36px);
 }
+.container-fluid h4, .container h4{
+    font-family:Roboto;
+    .h4-resp-style(@md-size: 1.55rem);   
+}
 p{
     .font-resp-style(@xs-sz: 14px; @md-sz: 16px; @lg-sz: 18.3px);
 }
@@ -45,6 +49,10 @@ a{.outlineless();}
         background-color: @border-color;
         .transition(0;0);//Надо убрать транзишон, а то срабатывает  где не надо.
     }
+}
+.line{
+    width: 22%;
+    border-bottom: solid 1px #dadee7;
 }
 html{height: 100%;}
 body{height: 100%;}
@@ -198,11 +206,8 @@ nav{
             margin-left: 13%;
             position: relative;
             top: 35px;
-            div.line{
-                width: 22%;
-                border-bottom: solid 1px #dadee7;
-            }
-            }
+
+        }
         .row:not(.row-of-lines){
             div.column-lg{
                 padding: 0 !important;
@@ -515,7 +520,102 @@ nav{
 }
 
 .pricing{
-    ul.pros-and-cons{
-        .ul(@img-path:"../img/6pricing/pros.png"; @marker-side: 24px);
+    @xxl: 1400px;
+    .container{
+        @media(min-width: @xxl) { max-width: 1360px;}
+
+        .row-with-offer{margin-bottom:4.6vh;}
+        .row-with-button{
+            max-width: 720px;
+            position: relative;
+        }
+        .row{
+            h1{
+                margin-top: 11vh;
+                margin-bottom: 8vh;
+            }
+
+            .card{
+                text-align: center;
+                box-shadow: 0 0 25px rgba(0,0,0,0.1);
+                border: 0 transparent;
+                h4{
+                    margin-top: 41px;
+                    margin-bottom: 35px;
+                }
+                h3{
+                    span{
+                        position: relative;
+                        bottom: 2px;
+                    }
+                    .dollar-sign{
+                        font-size: 42px;
+                        bottom: 4px;
+                        left: 6px;
+                    }
+                    .amount-of-dollars{
+                        font-family: roboto-bold;
+                        font-size: 72px;
+                        left: 8px;
+                    }
+                    .per-month{
+                        font-family: Roboto;
+                        font-size: 25px;
+                        left: 11px;
+                        color: #8492af;
+                    }
+                }
+
+                @media(min-width: @xxl) { 
+                    width: 360px;
+                }
+
+
+                ul.pros-and-cons{
+                    margin-top:25px;
+                    font-size: 19px;
+                    position: relative;
+                    right: 3px;
+
+                    .ul(@img-path:"../img/6pricing/pros.png"; @marker-side: 24px; @li-margin-bottom: 12px; @marker-left: -36px; @marker-top: 57%);
+                    li.cons{.li-content{.li-marker-container{.li-marker{background-image: url("../img/6pricing/cons.png");}}}}
+                }
+            }
+
+            p{
+                margin-top: 11vh;
+                font-size: 18px;
+                font-family: Roboto;
+                position: relative;
+                left: 10px;
+            }
+            .button-container{
+              position: relative;
+              left: 1px;
+              .my-btn{
+                .button(@r:27px; @button-height: 46px;);
+                @my-btn-color: #5584ff;
+                background-color: @my-btn-color;
+                color: #fff;
+                font-family: Roboto;
+                font-size: 19px;
+                @half-width-button:61px;
+                padding-left: @half-width-button;
+                padding-right: @half-width-button;
+                padding-top: 2px;
+            
+                &:hover{background-color: darken(@my-btn-color, 15%);}
+                &:active{background-color: darken(@my-btn-color, 30%);}
+              }
+            }
+            .line{
+                position: absolute;;
+                top: 50%;
+                width: 227px;
+            }
+            .left-line{left: 0;}
+            .right-line{right: 0;}
+
+        }
     }
 }

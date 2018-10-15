@@ -8,7 +8,7 @@
 .unselectable() - делает элемент неспособным к выделеню текста внутри.
 .outlineless() - Убираем обводку при нажатии или выделении элемента
 .button (@r:27px; @button-height;)- минимальный шаблон для кнопки.
-.ul (@img-path; @marker-side:20px; @li-margin-bottom:0px; @marker-left: 0px;) - шаблон для адаптивного списка
+.ul (@img-path; @marker-side:20px; @li-margin-bottom:0px; @marker-left: 0px; @marker-top) - шаблон для адаптивного списка
 */
 @sm: 576px;
 @md: 768px;
@@ -20,7 +20,11 @@
     .font-resp-style(@xs-sz: @xs-size; @md-sz: @md-size; @lg-sz: @lg-size; @xl-sz: @xl-size; @x-sz: @x-size);
 }
 //Чтобы изменить не все а несколько аргументов - достаточно написать .h1-resp-style(@x-width:1700px; @x-size: 5rem);
-.h3-resp-style (@xs-size:1.3rem; @sm-size:1.5rem; @md-size:1.70rem; @lg-size:1.70rem; @xl-size:1.70rem){
+.h3-resp-style (@xs-size:1.3rem; @sm-size:1.5rem; @md-size:1.70rem; @lg-size:@md-size; @xl-size:@lg-size){
+    text-align: center;
+    .font-resp-style(@xs-sz: @xs-size; @md-sz: @md-size; @lg-sz: @lg-size; @xl-sz: @xl-size);
+}
+.h4-resp-style (@xs-size:1.2rem; @sm-size:1.35rem; @md-size:1.5rem; @lg-size:@md-size; @xl-size:@lg-size){
     text-align: center;
     .font-resp-style(@xs-sz: @xs-size; @md-sz: @md-size; @lg-sz: @lg-size; @xl-sz: @xl-size);
 }
@@ -154,7 +158,7 @@
         vertical-align: middle;//Если не понимаешь зачем тут это свойство, то читай в css>проблемы со свойствами>vertical-align
     }
 }
-.ul (@img-path; @marker-side:20px; @li-margin-bottom:0px; @marker-left: 0px;){
+.ul (@img-path; @marker-side:20px; @li-margin-bottom:0px; @marker-left: -1 * @marker-side; @marker-top: 50%){
     li{
         list-style: none;
 
@@ -167,13 +171,15 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            left: -1 * @marker-side + @marker-left;
+            left: @marker-left;
                 .li-marker{
                     width: @marker-side;
                     height: @marker-side;
+                    //Чтобы сделать разные рисунки маркера нужно будет внести в style.less следующий код
+                    //li{.li-content{.li-marker-container{.li-marker{background-image: url("");}}}}
                     background-image: url(@img-path);
                     position: relative;
-                    top: 50%;
+                    top: @marker-top;
                     transform: translateY(-50%);
                     }
             }
