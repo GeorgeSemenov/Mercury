@@ -9,6 +9,7 @@
 .outlineless() - Убираем обводку при нажатии или выделении элемента
 .button (@r:27px; @button-height;)- минимальный шаблон для кнопки.
 .ul (@img-path; @marker-side:20px; @li-margin-bottom:0px; @marker-left: 0px; @marker-top) - шаблон для адаптивного списка
+.horizontal-ul - Список, который располагается по горизонтали(не миксина)
 */
 .textr {
   text-align: right;
@@ -132,6 +133,22 @@
 }
 .outlineless {
   outline: none;
+}
+.horizontal-ul li {
+  list-style: none;
+  display: inline-block;
+}
+a.my-anchor {
+  text-decoration: none;
+  color: inherit;
+}
+a.my-anchor:hover {
+  text-decoration: none;
+  color: inherit;
+}
+a.my-anchor:active {
+  text-decoration: none;
+  color: inherit;
 }
 @font-face {
   font-family: 'roboto-thin';
@@ -499,6 +516,11 @@ nav .container .navbar-nav .nav-item .login-btn:active {
     width: 100%;
   }
 }
+@media (max-width: 991px) {
+  .icon-features {
+    margin-top: 10px;
+  }
+}
 @media (min-width: 992px) {
   .icon-features {
     height: 700px;
@@ -634,6 +656,9 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 @media (max-width: 992px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
+    position: relative;
+    bottom: 5px;
+    right: 4px;
     font-weight: 900;
   }
 }
@@ -942,22 +967,42 @@ nav .container .navbar-nav .nav-item .login-btn:active {
     max-width: 1360px;
   }
 }
+@media (max-width: 991px) {
+  .pricing .container .row-with-cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .pricing .container .row-with-offer {
-  margin-bottom: 4.6vh;
+  margin-top: 9.5vh;
+  margin-bottom: 4.5vh;
 }
 .pricing .container .row-with-button {
   max-width: 720px;
   position: relative;
+}
+.pricing .container .row-additional-height {
+  height: 9.5vh;
 }
 .pricing .container .row h1 {
   margin-top: 11vh;
   margin-bottom: 8vh;
 }
 .pricing .container .row .card {
+  width: 300px;
   text-align: center;
   -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
   border: 0 transparent;
+}
+@media (max-width: 767px) {
+  .pricing .container .row .card {
+    -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  }
 }
 .pricing .container .row .card h4 {
   margin-top: 41px;
@@ -983,13 +1028,9 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   left: 11px;
   color: #8492af;
 }
-@media (min-width: 1400px) {
-  .pricing .container .row .card {
-    width: 360px;
-  }
-}
 .pricing .container .row .card ul.pros-and-cons {
   margin-top: 25px;
+  margin-bottom: 35px;
   font-size: 19px;
   position: relative;
   right: 3px;
@@ -1025,12 +1066,25 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 .pricing .container .row .card ul.pros-and-cons li.cons .li-content .li-marker-container .li-marker {
   background-image: url("../img/6pricing/cons.png");
 }
+@media (min-width: 1400px) {
+  .pricing .container .row .card {
+    width: 360px;
+  }
+}
 .pricing .container .row p {
-  margin-top: 11vh;
   font-size: 18px;
   font-family: Roboto;
   position: relative;
-  left: 10px;
+}
+@media (min-width: 1400px) {
+  .pricing .container .row p {
+    left: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .pricing .container .row p {
+    font-size: 15px;
+  }
 }
 .pricing .container .row .button-container {
   position: relative;
@@ -1064,11 +1118,120 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 .pricing .container .row .line {
   position: absolute;
   top: 50%;
-  width: 227px;
+  width: 130px;
+}
+@media (min-width: 768px) {
+  .pricing .container .row .line {
+    width: 227px;
+  }
+}
+@media (max-width: 575px) {
+  .pricing .container .row .line {
+    display: none;
+  }
 }
 .pricing .container .row .left-line {
   left: 0;
 }
 .pricing .container .row .right-line {
   right: 0;
+}
+.footer {
+  background-color: #0e1a35;
+  color: #8492af;
+  height: 13vh;
+  font-family: Roboto;
+}
+@media (max-width: 767px) {
+  .footer {
+    height: 70px;
+  }
+}
+.footer a {
+  text-decoration: none;
+  color: #8492af;
+}
+.footer .container {
+  height: 100%;
+  position: relative;
+  top: 2px;
+}
+@media (min-width: 1600px) {
+  .footer .container {
+    max-width: 1500px;
+  }
+}
+.footer .container .footer-content {
+  font-size: 18.2px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+@media (max-width: 767px) {
+  .footer .container .footer-content {
+    text-align: center;
+    top: 0;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@media (max-width: 767px) {
+  .footer .container .footer-content .left-footer-side {
+    width: 100%;
+  }
+}
+.footer .container .footer-content .right-footer-side {
+  float: right;
+}
+@media (max-width: 767px) {
+  .footer .container .footer-content .right-footer-side {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .footer .container .footer-content .right-footer-side ul {
+    padding-left: 15px;
+  }
+}
+.footer .container .footer-content .right-footer-side .ul-with-words {
+  position: relative;
+  right: 6px;
+}
+@media (max-width: 767px) {
+  .footer .container .footer-content .right-footer-side .ul-with-words {
+    padding-left: 0px;
+  }
+}
+.footer .container .footer-content .right-footer-side .ul-with-words li {
+  margin-left: 53px;
+}
+@media (max-width: 991px) {
+  .footer .container .footer-content .right-footer-side .ul-with-words li {
+    margin-left: 25px;
+  }
+  .footer .container .footer-content .right-footer-side .ul-with-words li:first-child {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .footer .container .footer-content .right-footer-side .ul-with-words li {
+    margin-left: 10px;
+  }
+}
+.footer .container .footer-content .right-footer-side .ul-with-icons li {
+  margin-left: 19px;
+}
+.footer .container .footer-content .right-footer-side .ul-with-icons li:first-child {
+  margin-left: 0px;
+}
+@media (max-width: 767px) {
+  .footer .container .footer-content .right-footer-side .ul-with-icons li {
+    margin-left: 10px;
+  }
+  .footer .container .footer-content .right-footer-side .ul-with-icons li:first-child {
+    margin-left: 0px;
+  }
 }

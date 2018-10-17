@@ -7,6 +7,7 @@
     %meta(content="width=device-width, initial-scale=1" name="viewport")/
     %link(href="css/style.css" rel="stylesheet")/
     %link(href="css/libs.min.css" rel="stylesheet prefetch")/
+    %link(rel="shortcut icon" type="image/png" href="img/favicon/favicon.png")/
   %body
     %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.absolutly
       .container
@@ -17,7 +18,7 @@
         #navbarSupportedContent.collapse.navbar-collapse
           %ul.navbar-nav.ml-auto.textc
             %li.nav-item
-              %a.nav-link(href="#!") Featurse
+              %a.nav-link(href="#!") Features
             %li.nav-item
               %a.nav-link(href="#!") Pricing
             %li.nav-item
@@ -166,8 +167,8 @@
       .container
         .row
           %h1.d-block.w-100 Check our pricing!
-        .row
-          .card.bronze-plan
+        .row.row-with-cards
+          .card.bronze-plan.mx-auto.mx-lg-0.mb-4.mb-lg-0
             %h4.card-name BRONZE PLAN
             %h3.price 
               %span.dollar-sign $ 
@@ -198,7 +199,7 @@
                     .li-marker.my-auto
                   .li-text-container
                     %span.li-text Lorem ipsum dolor sit am
-          .card.silver-plan.mx-auto
+          .card.silver-plan.mx-auto.mb-4.mb-lg-0
             %h4.card-name SILVER PLAN
             %h3.price 
               %span.dollar-sign $ 
@@ -229,7 +230,7 @@
                     .li-marker.my-auto
                   .li-text-container
                     %span.li-text Lorem ipsum dolor sit am
-          .card.gold-plan
+          .card.gold-plan.mx-auto.mx-lg-0
             %h4.card-name GOLD PLAN
             %h3.price 
               %span.dollar-sign $ 
@@ -273,4 +274,30 @@
                 / этот блок нужен, чтобы задать высоту ссылочной кнопке использую height и vertical align
               Join now!
           .line.right-line
+        .row.row-additional-height
+    .footer
+      .container
+        .footer-content
+          .left-footer-side.d-inline-block.mr-auto
+            %span
+              &#169 2016 Merkury All Right Reserved
+          .right-footer-side.d-inline-block
+            %ul.horizontal-ul.ul-with-words.d-inline-block
+              %li 
+                %a.my-anchor(href="#!") Pricing
+              %li 
+                %a.my-anchor(href="#!") Blog
+              %li
+                %a.my-anchor(href="#!") Contact
+            %ul.horizontal-ul.ul-with-icons.d-inline-block
+              %li 
+                %a(href="#!")
+                  %img.facebook(alt="facebook.ico" src="img/footer/facebook.png")/
+              %li 
+                %a(href="#!")
+                  %img.twitter(alt="twitter.ico" src="img/footer/twitter.png")/
+              %li 
+                %a(href="#!")
+                  %img.google(alt="google.ico" src="img/footer/google.png")/
     %script(src="js/libs.min.js")
+    %script(src="js/script.js")

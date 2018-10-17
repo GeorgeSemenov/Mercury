@@ -1,29 +1,22 @@
 $(document).ready(function(){
-    //функция для плавного скролла до якоря (с помощью ссылок)
- $("ul.navbar-nav a:not(.dropdown-toggle)").click(function(){
-     //Почему-то, если не добавить а:not(.dropdown-toggle), то при нажатии на ссылку с которой начинается выпадающее меню функция добавления класса active не будет срабатывать, я думаю это как-то связанно с animate, хотя на самом деле у меня нет никаких идей.
-    var dropdownMenuHeight = $('div.dropdown-menu.show').css('height');
-    var windowWidth = $(window).width();
-    var isUndefined = dropdownMenuHeight == undefined;
-    var isLgWidth = windowWidth > 991 ;
-    var additionalOffset = (!isUndefined && !isLgWidth) ? (parseInt(dropdownMenuHeight)) : ( 0 )  ;
-    var navHeight = $('nav').css('height');
- 	$("body,html").stop(true,false).animate({
- 		scrollTop:$("#" + $(this).data('value')).offset().top - (parseInt(navHeight) - additionalOffset)
- 	},1000)
- });
-    //функции которые позволяют классу active появляться в нужных местах в nav
-    $("ul.navbar-nav li > a:not(.dropdown-toggle)").click(function(){
-      $("ul.navbar-nav a").removeClass("active");
-      $(this).addClass("active");
-    });
-    $("ul.navbar-nav li > a.dropdown-toggle").click(function(){
-      $("ul.navbar-nav li > a").removeClass("active");
-      $(this).addClass("active");
-    });
-    $("div.dropdown-menu > a").click(function(){
-      $("div.dropdown-menu > a").removeClass("active");
-      $(this).addClass("active");
-    });
-
+	console.log("begin script");
+	var count = 0;
+	var header_background_height_when_page_just_loaded = $(".header-background").css('height');
+	var header_background_height_when_nav_expanded_no_px = parseInt(header_background_height_when_page_just_loaded) + 250; 
+	var header_background_height_when_nav_expanded = header_background_height_when_nav_expanded_no_px + "px";
+	console.log("header_background_height_when_page_just_loaded = " + header_background_height_when_page_just_loaded);
+	$(".navbar-toggler").click(function(){
+		console.log("click");
+		count ++;
+		console.log("count = " + count);
+		if (count % 2 == 0 ){
+			$(".header-background").css({"height": header_background_height_when_page_just_loaded});
+			console.log("odd");
+			console.log("header background height = " + header_background_height_when_page_just_loaded)
+		}else{
+			console.log("even");
+			console.log("header background height = " + header_background_height_when_nav_expanded);
+			$(".header-background").css({"height": header_background_height_when_nav_expanded});
+		}
+	})
 })

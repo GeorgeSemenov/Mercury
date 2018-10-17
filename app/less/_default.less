@@ -9,6 +9,7 @@
 .outlineless() - Убираем обводку при нажатии или выделении элемента
 .button (@r:27px; @button-height;)- минимальный шаблон для кнопки.
 .ul (@img-path; @marker-side:20px; @li-margin-bottom:0px; @marker-left: 0px; @marker-top) - шаблон для адаптивного списка
+.horizontal-ul - Список, который располагается по горизонтали(не миксина)
 */
 @sm: 576px;
 @md: 768px;
@@ -190,5 +191,25 @@
                 }
             }
         }
+    }
+}
+
+.horizontal-ul{
+    li{
+        list-style: none;
+        display: inline-block;
+    }
+}
+a.my-anchor{
+    text-decoration:none;
+    color: inherit;
+
+    &:hover{
+        text-decoration:none;
+        color: inherit;
+    }
+    &:active{
+        text-decoration:none;
+        color: inherit;
     }
 }
