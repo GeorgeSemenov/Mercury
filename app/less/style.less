@@ -297,16 +297,21 @@ nav{
                     @media (min-width: (@lg)){top: @top;}
                     position: relative;
                     
-                    left: -8px;
+                    @media(min-width: @lg) { left: -8px;}
 
                     h1{
                         margin-bottom: 34px;
                         max-width: 95%;
+                        position: relative;
+
+                        @media(min-width: @lg) { 
+                        bottom: 5px;
+                        right: 4px; 
+                        }
                         @media(max-width: @lg) { 
                             position: relative;
-                            bottom: 5px;
-                            right: 4px;
                             font-weight: 900; 
+                            max-width: 100%;
                         }
                     }
                     .text{
@@ -337,6 +342,7 @@ nav{
                                     @marker-side: 28px;
                                     display: inline-block;
                                     position: relative;
+                                    @media(max-width: @lg - 1) { left:@marker-side/2;}
 
                                     .li-marker-container{
                                         position: absolute;
@@ -642,7 +648,7 @@ nav{
     height: 13vh;
     font-family: Roboto;
 
-    @media(max-width: @md - 1) { height: 70px;}
+    @media(max-width: @md - 1) { height: 71px;}
 
     a{
         text-decoration: none;
@@ -651,9 +657,10 @@ nav{
 
     .container{
         height: 100%;
-        @media(min-width: @xxl) { max-width: 1500px;}
         position: relative;
-        top: 2px;
+        margin-top: 2px;
+        @media(min-width: @xxl) { max-width: 1500px;}
+        @media(max-width: @lg - 1) { top: 0px;}
         .footer-content{
             font-size: 18.2px;
             position: relative;
@@ -661,7 +668,7 @@ nav{
             transform: translateY(-50%);
             @media(max-width: @md - 1) { 
                 text-align: center;
-                top: 0;
+                top: 6px;
                 transform: translateY(0);
             }
             .left-footer-side{@media(max-width: @md - 1) { width: 100%;}            }
@@ -669,7 +676,12 @@ nav{
                 float: right;
 
                 @media(max-width: @md - 1) { width: 100%;}
-                ul{@media(max-width: @md - 1) {padding-left: 15px;}}
+                ul{
+                    @media(max-width: @md - 1) {
+                        padding-left: 15px;
+                        margin-bottom: 0px;
+                    }
+                }
                 .ul-with-words{
                     @media(max-width: @md - 1) { padding-left: 0px;}
                     position: relative;

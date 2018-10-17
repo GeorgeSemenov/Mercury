@@ -9,6 +9,9 @@
 .outlineless() - Убираем обводку при нажатии или выделении элемента
 .button (@r:27px; @button-height;)- минимальный шаблон для кнопки.
 .ul (@img-path; @marker-side:20px; @li-margin-bottom:0px; @marker-left: 0px; @marker-top) - шаблон для адаптивного списка
+    Также стоит учитывать, что, если элементы списка будут располагаться по середине (text-align: center;) то казаться будет что он
+    слегка сдвинуть в левый бок, дело в том, что маркер имеет абсолютное позиционирование, поэтому ширины как бы не имеет для других элементов.
+    Чтобы испаравить ситуацию нужно .li-content добавить свойство left: @marker-side/2;
 .horizontal-ul - Список, который располагается по горизонтали(не миксина)
 */
 .textr {
@@ -643,23 +646,33 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto {
   position: relative;
-  left: -8px;
 }
 @media (min-width: 992px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto {
     top: 7vh;
   }
 }
+@media (min-width: 992px) {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto {
+    left: -8px;
+  }
+}
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
   margin-bottom: 34px;
   max-width: 95%;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
+    bottom: 5px;
+    right: 4px;
+  }
 }
 @media (max-width: 992px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto h1 {
     position: relative;
-    bottom: 5px;
-    right: 4px;
     font-weight: 900;
+    max-width: 100%;
   }
 }
 @media (min-width: 1758px) {
@@ -726,6 +739,11 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li .li-content {
   display: inline-block;
   position: relative;
+}
+@media (max-width: 991px) {
+  .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li .li-content {
+    left: 14px;
+  }
 }
 .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul li .li-content .li-marker-container {
   position: absolute;
@@ -1144,7 +1162,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 @media (max-width: 767px) {
   .footer {
-    height: 70px;
+    height: 71px;
   }
 }
 .footer a {
@@ -1154,11 +1172,16 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 .footer .container {
   height: 100%;
   position: relative;
-  top: 2px;
+  margin-top: 2px;
 }
 @media (min-width: 1600px) {
   .footer .container {
     max-width: 1500px;
+  }
+}
+@media (max-width: 991px) {
+  .footer .container {
+    top: 0px;
   }
 }
 .footer .container .footer-content {
@@ -1172,7 +1195,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 @media (max-width: 767px) {
   .footer .container .footer-content {
     text-align: center;
-    top: 0;
+    top: 6px;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
             transform: translateY(0);
@@ -1194,6 +1217,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 @media (max-width: 767px) {
   .footer .container .footer-content .right-footer-side ul {
     padding-left: 15px;
+    margin-bottom: 0px;
   }
 }
 .footer .container .footer-content .right-footer-side .ul-with-words {
