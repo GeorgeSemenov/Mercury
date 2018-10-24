@@ -183,7 +183,10 @@ gulp.task('build',['clean','lessTask','buildScripts','hamlTask'],function(){
         'app/js/**/*'
     ])
     .pipe(gulp.dest('dist/js'))
-    
+ 
+    var distImg = gulp.src(['app/img/**/*'])
+    .pipe(gulp.dest('dist/img'))
+       
     var distHtml = gulp.src('app/*.html')
     .pipe(gulp.dest('dist'));
 });

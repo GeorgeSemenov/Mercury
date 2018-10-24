@@ -690,6 +690,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
   margin-top: 54px;
   position: relative;
   right: 38px;
+  color: #5384fe;
 }
 @media (max-width: 991px) {
   .all-your-need-is-a-love .container-fluid .row div.col-12 div.ml-auto .text ul {
@@ -786,6 +787,7 @@ nav .container .navbar-nav .nav-item .login-btn:active {
 }
 .drag-and-drop-screen {
   background-color: #0e1a35;
+  background-image: url(../img/4Drag&Drop/Graph.png);
 }
 @media (min-width: 992px) {
   .drag-and-drop-screen {
